@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "Employee.h"
+#import "Organization.h"
+
 
 @interface AppDelegate ()
 
@@ -17,6 +20,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    //Employee* emp1 = [[Employee alloc]initWithName:@"Alex" LastName:@"Test" Salary:arc4random()];
+    
+    Organization* org1 =[[Organization alloc]initWithName:@"TheBestOrganization"];
+    
+    [org1 addEmployeeWithName:@"Alex"];
+    [org1 addEmployeeWithName:@"Vova"];
+    [org1 addEmployeeWithName:@"Misha"];
+    
+    NSLog(@"Average salary in the organization = %d",[org1 calculateAverageSalary]);
+    
+    NSLog(@"%@",[org1 employeeWithLowestSalary]);
+    
+    NSLog(@"Employees that match the condition: %@",[org1 employeesWithSalary:2000 tolerance:1000]);
+    
+    
+
+    
+   
     return YES;
 }
 
