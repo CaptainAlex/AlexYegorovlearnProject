@@ -40,7 +40,6 @@
         
     }
     return randomNumber;
-    
 }
 
 
@@ -61,9 +60,22 @@
     self.employeers = [array copy];
 }
 
-- (void)addEmployee:(Employee*)employ{
+- (void)addEmployee:(Employee*)employee
+{
+    NSMutableArray *array = [NSMutableArray new];
+    array = [self.employeers mutableCopy];
     
+    [array addObject:employee];
+    
+    self.employeers = [array copy];
 }
+
+- (void)print
+{
+    NSLog(@"%lu employees in the organization",(unsigned long)[_employeers count]);
+}
+
+
 
 - (int)calculateAverageSalary
 {
@@ -92,7 +104,6 @@
 
 - (NSArray*)employeesWithSalary:(int)salary tolerance:(int)tolerance
 {
-    
     int inputSalary = salary;
     int inputTolerance = tolerance;
     int min = inputSalary - inputTolerance;

@@ -20,13 +20,15 @@
 
 - (void)addEmployeeWithName:(NSString*)nameEmployee;
 
-- (void)addEmployee:(Employee*)employ;
+- (void)addEmployee:(Employee*)employee;
 
 - (int)calculateAverageSalary;
 
 - (NSString*)employeeWithLowestSalary;
 
 - (NSArray*)employeesWithSalary:(int)salary tolerance:(int)tolerance;
+
+- (void)print;
 
 
 @end

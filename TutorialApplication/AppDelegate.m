@@ -21,14 +21,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    
-    //Employee* emp1 = [[Employee alloc]initWithName:@"Alex" LastName:@"Test" Salary:arc4random()];
+    Employee *emp1 = [[Employee alloc]initWithName:@"Stepka" LastName:@"Pupkin" Salary:1300];
     
     Organization* org1 =[[Organization alloc]initWithName:@"TheBestOrganization"];
+    
+    [org1 addEmployee:emp1];
     
     [org1 addEmployeeWithName:@"Alex"];
     [org1 addEmployeeWithName:@"Vova"];
     [org1 addEmployeeWithName:@"Misha"];
+    
+    [org1 print];
     
     NSLog(@"Average salary in the organization = %d",[org1 calculateAverageSalary]);
     
@@ -36,10 +39,9 @@
     
     NSLog(@"Employees that match the condition: %@",[org1 employeesWithSalary:2000 tolerance:1000]);
     
-    
-
-    
    
+    [org1 print];
+    
     return YES;
 }
 
