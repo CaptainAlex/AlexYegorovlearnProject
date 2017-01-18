@@ -70,6 +70,16 @@
     self.employeers = [array copy];
 }
 
+- (void)removeEmployee:(Employee *)employee
+{
+    NSMutableArray *array = [NSMutableArray new];
+    array = [self.employeers mutableCopy];
+    
+    [array removeObject:employee];
+    
+    self.employeers = [array copy];
+}
+
 - (void)print
 {
     NSLog(@"%lu employees in the organization",(unsigned long)[_employeers count]);

@@ -22,6 +22,8 @@
 
 - (void)addEmployee:(Employee*)employee;
 
+- (void)removeEmployee:(Employee *)employee;
+
 - (int)calculateAverageSalary;
 
 - (NSString*)employeeWithLowestSalary;
