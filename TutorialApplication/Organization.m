@@ -2,11 +2,12 @@
 //  Organization.m
 //  TutorialApplication
 //
-//  Created by Александр Егоров on 1/16/17.
-//  Copyright © 2017 Александр Егоров. All rights reserved.
+//  Created by Aleksandr Yegorov on 1/16/17.
+//  Copyright © 2017 Aleksandr Yegorov. All rights reserved.
 //
 
 #import "Organization.h"
+#import "Employee.h"
 @interface Organization()
 
 @property(strong,nonatomic) NSArray<Employee *>* employeers;
@@ -20,7 +21,7 @@
 {
     self = [super init];
     
-    if(self)
+    if (self)
     {
         self.name = name;
         self.employeers = [[NSArray alloc]init];
@@ -28,60 +29,46 @@
     return self;
 }
 
-- (int)getRandomNumberBetween
-{
-    int fromNumber = 100;
-    int toNumber = 5000;
-    int randomNumber = 1;
-   
-    while (randomNumber % 10 != 0)
-    {
-        randomNumber = (arc4random()%(toNumber-fromNumber))+fromNumber;
-        
-    }
-    return randomNumber;
-}
-
-
 - (void)addEmployeeWithName:(NSString*)nameEmployee
 {
-    int ourSalary = [self getRandomNumberBetween];
-    Employee* emp = [[Employee alloc]initWithName:nameEmployee LastName:@"test" Salary:ourSalary];
+    NSString *stringName=nameEmployee;
+    NSArray *items = [stringName componentsSeparatedByString:@" "];
+    NSString *str1=[items objectAtIndex:0];
+    NSString *str2=[items objectAtIndex:1];
+    int ourSalary = ((arc4random_uniform(5000)+100)/100) * 100;
+    Employee* emp = [[Employee alloc] initWithName:str1 lastName:str2 salary:ourSalary];
     NSLog(@"new employee is created");
+    NSMutableArray *arrayEmployees = [NSMutableArray new];
+    arrayEmployees = [self.employeers mutableCopy];
     
-    self.countForSalary++;
-    self.averageSalary += emp.salary;
-
-    NSMutableArray *array = [NSMutableArray new];
-    array = [self.employeers mutableCopy];
-
-    [array addObject:emp];
+    [arrayEmployees addObject:emp];
     
-    self.employeers = [array copy];
+    self.employeers = [arrayEmployees copy];
 }
 
 - (void)addEmployee:(Employee*)employee
 {
-    NSMutableArray *array = [NSMutableArray new];
-    array = [self.employeers mutableCopy];
+    NSMutableArray *arrayEmployees = [NSMutableArray new];
+    arrayEmployees = [self.employeers mutableCopy];
     
-    [array addObject:employee];
+    [arrayEmployees addObject:employee];
     
-    self.employeers = [array copy];
+    self.employeers = [arrayEmployees copy];
 }
-
-- (void)print
-{
-    NSLog(@"%lu employees in the organization",(unsigned long)[_employeers count]);
-}
-
-
 
 - (int)calculateAverageSalary
 {
-    return self.averageSalary/_countForSalary;
+    int midSalary = 0;
+    for (Employee* obj in self.employeers){
+        
+        midSalary = midSalary + obj.salary;
+    }
+    
+    midSalary = midSalary/[self.employeers count];
+    
+    return midSalary;
+    
 }
-
 
 - (NSString*)employeeWithLowestSalary
 {
@@ -90,7 +77,7 @@
     int minSalary = 5000;
     for (Employee* obj in self.employeers)
     {
-        if(obj.salary < minSalary)
+        if (obj.salary < minSalary)
         {
             minSalary = obj.salary;
             empl = obj;
@@ -109,20 +96,25 @@
     int min = inputSalary - inputTolerance;
     int max = inputSalary + inputTolerance;
     
-     NSMutableArray *array = [NSMutableArray new];
+    NSMutableArray *arrayEmployees = [NSMutableArray new];
     
     for(Employee* obj in self.employeers)
     {
-        if(obj.salary > min && obj.salary < max)
+        if (obj.salary >= min && obj.salary <= max)
         {
             
-            [array addObject:obj.fullName];
+            [arrayEmployees addObject:obj.fullName];
         }
     }
     
-    NSArray *finalArray = [[NSArray alloc]initWithArray:array];
+    NSArray *finalArray = [[NSArray alloc]initWithArray:arrayEmployees];
     
     return  finalArray;
+}
+
+-(NSString *)description
+{
+    return [NSString stringWithFormat:@"%lu employees in the organization",(unsigned long)[self.employeers count] ];
 }
 
 @end

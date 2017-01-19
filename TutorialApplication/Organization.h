@@ -2,16 +2,14 @@
 //  Organization.h
 //  TutorialApplication
 //
-//  Created by Александр Егоров on 1/16/17.
-//  Copyright © 2017 Александр Егоров. All rights reserved.
+//  Created by Aleksandr Yegorov on 1/16/17.
+//  Copyright © 2017 Aleksandr Yegorov. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "Employee.h"
+@class Employee;
 
 @interface Organization : NSObject
-
-@property(assign,nonatomic)int averageSalary;
 
 @property(strong,nonatomic)NSString* name;
 
@@ -28,7 +26,5 @@
 
 - (NSArray*)employeesWithSalary:(int)salary tolerance:(int)tolerance;
 
-- (void)print;
-
-
 @end
+
