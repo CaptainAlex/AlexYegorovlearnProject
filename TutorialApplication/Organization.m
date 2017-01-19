@@ -46,7 +46,7 @@
     self.employeers = [arrayEmployees copy];
 }
 
-- (void)addEmployee:(Employee*)employee
+- (void)addEmployee:(Employee *)employee
 {
     NSMutableArray *arrayEmployees = [NSMutableArray new];
     arrayEmployees = [self.employeers mutableCopy];
@@ -69,7 +69,7 @@
 - (int)calculateAverageSalary
 {
     int midSalary = 0;
-    for (Employee* obj in self.employeers){
+    for (Employee *obj in self.employeers){
         
         midSalary = midSalary + obj.salary;
     }

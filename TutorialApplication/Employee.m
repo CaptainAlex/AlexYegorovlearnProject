@@ -17,7 +17,7 @@
 
 @implementation Employee
 
-- (instancetype) initWithName: (NSString *)firstName LastName:(NSString*)lastName Salary:(int)salary
+- (instancetype) initWithName: (NSString *)firstName LastName:(NSString *)lastName Salary:(int)salary
 {
     self = [super init];
     if(self)
