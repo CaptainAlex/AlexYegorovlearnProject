@@ -38,6 +38,8 @@
     
     NSLog(@"Employees that match the condition: %@",[org1 employeesWithSalary:2000 tolerance:1000]);
     
+    [org1 removeEmployee:emp1];
+    
     NSLog(@"%@",[org1 description]);
     
     return YES;
