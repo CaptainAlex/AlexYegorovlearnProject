@@ -16,7 +16,7 @@
 @property(strong,nonatomic,readonly)NSString* fullName;
 
 
-- (id) initWithName: (NSString*)firstNAME LastName:(NSString*)lastNAME Salary:(int)salarry;
+- (id) initWithName:(NSString*)firstName LastName:(NSString*)lastName Salary:(int)salary;
 
 
 @end

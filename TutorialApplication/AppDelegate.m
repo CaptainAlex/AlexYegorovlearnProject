@@ -21,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    Employee *emp1 = [[Employee alloc] initWithName:@"Stepka" lastName:@"Pupkin" salary:3000];
+    Employee *emp1 = [[Employee alloc] initWithName:@"Stepka" LastName:@"Pupkin" Salary:3000];
     
     Organization* org1 =[[Organization alloc] initWithName:@"TheBestOrganization"];
     
