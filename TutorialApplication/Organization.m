@@ -17,7 +17,7 @@
 
 @implementation Organization
 
-- (instancetype)initWithName:(NSString*)name
+- (instancetype)initWithName:(NSString *)name
 {
     self = [super init];
     
@@ -29,7 +29,7 @@
     return self;
 }
 
-- (void)addEmployeeWithName:(NSString*)nameEmployee
+- (void)addEmployeeWithName:(NSString *)nameEmployee
 {
     NSString *stringName=nameEmployee;
     NSArray *items = [stringName componentsSeparatedByString:@" "];
@@ -80,12 +80,12 @@
     
 }
 
-- (NSString*)employeeWithLowestSalary
+- (NSString *)employeeWithLowestSalary
 {
     Employee *empl = nil;
     
     int minSalary = 5000;
-    for (Employee* obj in self.employeers)
+    for (Employee *obj in self.employeers)
     {
         if (obj.salary < minSalary)
         {
@@ -94,12 +94,12 @@
         }
     }
     
-    NSString* finalResult = [NSString stringWithFormat:@"Employee with lowest salary is %@, salary = %d",empl.fullName,minSalary];
+    NSString *finalResult = [NSString stringWithFormat:@"Employee with lowest salary is %@, salary = %d",empl.fullName,minSalary];
     
     return finalResult;
 }
 
-- (NSArray*)employeesWithSalary:(int)salary tolerance:(int)tolerance
+- (NSArray *)employeesWithSalary:(int)salary tolerance:(int)tolerance
 {
     int inputSalary = salary;
     int inputTolerance = tolerance;
@@ -108,7 +108,7 @@
     
     NSMutableArray *arrayEmployees = [NSMutableArray new];
     
-    for(Employee* obj in self.employeers)
+    for(Employee *obj in self.employeers)
     {
         if (obj.salary >= min && obj.salary <= max)
         {

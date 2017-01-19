@@ -13,10 +13,10 @@
 
 @property(assign,nonatomic)int salary;
 
-@property(strong,nonatomic,readonly)NSString* fullName;
+@property(strong,nonatomic,readonly)NSString *fullName;
 
 
-- (id) initWithName:(NSString*)firstName LastName:(NSString*)lastName Salary:(int)salary;
+- (id) initWithName:(NSString *)firstName LastName:(NSString *)lastName Salary:(int)salary;
 
 
 @end

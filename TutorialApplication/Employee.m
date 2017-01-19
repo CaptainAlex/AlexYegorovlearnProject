@@ -10,21 +10,21 @@
 
 @interface Employee()
 
-@property(strong,nonatomic)NSString* firstName;
-@property(strong,nonatomic)NSString* lastName;
+@property(strong,nonatomic)NSString *firstName;
+@property(strong,nonatomic)NSString *lastName;
 
 @end
 
 @implementation Employee
 
-- (instancetype) initWithName: (NSString*)firstNAME LastName:(NSString*)lastNAME Salary:(int)salarry
+- (instancetype) initWithName: (NSString *)firstName LastName:(NSString*)lastName Salary:(int)salary
 {
     self = [super init];
     if(self)
     {
-        self.firstName = firstNAME;
-        self.lastName = lastNAME;
-        self.salary = salarry;
+        self.firstName = firstName;
+        self.lastName = lastName;
+        self.salary = salary;
         _fullName = [NSString stringWithFormat:@"%@ %@",self.firstName,self.lastName];
     }
     return self;

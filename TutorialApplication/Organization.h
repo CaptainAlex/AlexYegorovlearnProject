@@ -11,13 +11,13 @@
 
 @interface Organization : NSObject
 
-@property(strong,nonatomic)NSString* name;
+@property(strong,nonatomic)NSString *name;
 
-- (id)initWithName:(NSString*)name;
+- (id)initWithName:(NSString *)name;
 
-- (void)addEmployeeWithName:(NSString*)nameEmployee;
+- (void)addEmployeeWithName:(NSString *)nameEmployee;
 
-- (void)addEmployee:(Employee*)employee;
+- (void)addEmployee:(Employee *)employee;
 
 - (void)removeEmployee:(Employee *)employee;
 
