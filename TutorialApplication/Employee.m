@@ -15,16 +15,7 @@
 
 @end
 
-
-
-
 @implementation Employee
-@synthesize firstName;
-@synthesize lastName;
-
-
-
-
 
 - (id) initWithName: (NSString*)firstNAME LastName:(NSString*)lastNAME Salary:(int)salarry
 {
