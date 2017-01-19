@@ -56,6 +56,16 @@
     self.employeers = [arrayEmployees copy];
 }
 
+- (void)removeEmployee:(Employee *)employee
+{
+    NSMutableArray *arrayEmployees = [NSMutableArray new];
+    arrayEmployees = [self.employeers mutableCopy];
+    
+    [arrayEmployees removeObject:employee];
+    
+    self.employeers = [arrayEmployees copy];
+}
+
 - (int)calculateAverageSalary
 {
     int midSalary = 0;
