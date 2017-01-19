@@ -33,6 +33,7 @@
         [self.myTitleLabel setText:textField.text];
     }];
     
+    
     UIAlertAction* actionCancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
     
     [alert addAction:actionAddText];
