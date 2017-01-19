@@ -31,10 +31,10 @@
     self = [super init];
     if(self)
     {
-    self.firstName = firstNAME;
-    self.lastName = lastNAME;
-    self.salary = salarry;
-    _fullName = [NSString stringWithFormat:@"%@ %@",self.firstName,self.lastName];
+        self.firstName = firstNAME;
+        self.lastName = lastNAME;
+        self.salary = salarry;
+        _fullName = [NSString stringWithFormat:@"%@ %@",self.firstName,self.lastName];
     }
     return self;
 }
