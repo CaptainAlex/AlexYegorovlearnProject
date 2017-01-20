@@ -17,14 +17,14 @@
 
 @implementation Employee
 
-- (id) initWithName: (NSString *)firstNAME LastName:(NSString *)lastNAME Salary:(int)salarry
+- (id) initWithName: (NSString *)firstName lastName:(NSString *)lastName salary:(int)salary
 {
     self = [super init];
     if(self)
     {
-        self.firstName = firstNAME;
-        self.lastName = lastNAME;
-        self.salary = salarry;
+        self.firstName = firstName;
+        self.lastName = lastName;
+        self.salary = salary;
         _fullName = [NSString stringWithFormat:@"%@ %@",self.firstName,self.lastName];
     }
     return self;
