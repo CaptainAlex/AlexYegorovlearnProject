@@ -30,7 +30,7 @@
     [org1 addEmployeeWithName:@"Vova Kynovskiy"];
     [org1 addEmployeeWithName:@"Misha Davidayn"];
     
-    NSLog(@"%@",[org1 description]);
+    NSLog(@"%@", [org1 description]);
     
     NSLog(@"Average salary in the organization = %d", [org1 calculateAverageSalary]);
     

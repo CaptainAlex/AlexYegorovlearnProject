@@ -69,8 +69,10 @@
 - (int)calculateAverageSalary
 {
     int midSalary = 0;
+
     for (Employee *obj in self.employeers)
     {
+
         midSalary = midSalary + obj.salary;
     }
     
