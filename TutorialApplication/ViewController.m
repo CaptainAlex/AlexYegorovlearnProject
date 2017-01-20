@@ -28,8 +28,7 @@
 - (IBAction)setTitleLabel:(id)sender {
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"My Alert" message:@"Enter" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *actionAddText = [UIAlertAction actionWithTitle:@"Add" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        
+    UIAlertAction *actionAddText = [UIAlertAction actionWithTitle:@"Add" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
         UITextField *textField = alert.textFields.firstObject;
         [self.myTitleLabel setText:textField.text];
     }];
