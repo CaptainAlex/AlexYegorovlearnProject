@@ -2,8 +2,8 @@
 //  ViewController.m
 //  TutorialApplication
 //
-//  Created by Александр Егоров on 1/16/17.
-//  Copyright © 2017 Александр Егоров. All rights reserved.
+//  Created by Aleksandr Yegorov on 1/16/17.
+//  Copyright © 2017 Aleksandr Yegorov. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -27,20 +27,18 @@
 
 - (IBAction)setTitleLabel:(id)sender {
     
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert" message:@"Enter" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* actionAddText = [UIAlertAction actionWithTitle:@"Add" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"My Alert" message:@"Enter" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *actionAddText = [UIAlertAction actionWithTitle:@"Add" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
-        UITextField* textField = alert.textFields.firstObject;
+        UITextField *textField = alert.textFields.firstObject;
         [self.myTitleLabel setText:textField.text];
     }];
     
-    
-    UIAlertAction* actionCancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
+    UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
     
     [alert addAction:actionAddText];
     [alert addAction:actionCancel];
-    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField){
     }];
     [self presentViewController:alert animated:YES completion:nil];
 }

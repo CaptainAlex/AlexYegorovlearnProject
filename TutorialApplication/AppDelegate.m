@@ -23,7 +23,7 @@
     
     Employee *emp1 = [[Employee alloc] initWithName:@"Stepka" LastName:@"Pupkin" Salary:3000];
     
-    Organization* org1 =[[Organization alloc] initWithName:@"TheBestOrganization"];
+    Organization *org1 =[[Organization alloc] initWithName:@"TheBestOrganization"];
     
     [org1 addEmployee:emp1];
     [org1 addEmployeeWithName:@"Alex Yegorov"];

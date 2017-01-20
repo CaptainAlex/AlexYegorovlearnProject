@@ -2,8 +2,8 @@
 //  Employee.h
 //  TutorialApplication
 //
-//  Created by Александр Егоров on 1/16/17.
-//  Copyright © 2017 Александр Егоров. All rights reserved.
+//  Created by Aleksandr Yegorov on 1/16/17.
+//  Copyright © 2017 Aleksandr Yegorov. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -13,10 +13,10 @@
 
 @property(assign,nonatomic)int salary;
 
-@property(strong,nonatomic,readonly)NSString* fullName;
+@property(strong,nonatomic,readonly)NSString *fullName;
 
 
-- (id) initWithName:(NSString*)firstName LastName:(NSString*)lastName Salary:(int)salary;
+- (id) initWithName:(NSString *)firstName LastName:(NSString *)lastName Salary:(int)salary;
 
 
 @end
