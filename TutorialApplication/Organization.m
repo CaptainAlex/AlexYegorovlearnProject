@@ -17,7 +17,7 @@
 
 @implementation Organization
 
-- (id)initWithName:(NSString*)name
+- (id)initWithName:(NSString *)name
 {
     self = [super init];
     
@@ -29,14 +29,14 @@
     return self;
 }
 
-- (void)addEmployeeWithName:(NSString*)nameEmployee
+- (void)addEmployeeWithName:(NSString *)nameEmployee
 {
     NSString *stringName=nameEmployee;
     NSArray *items = [stringName componentsSeparatedByString:@" "];
     NSString *str1=[items objectAtIndex:0];
     NSString *str2=[items objectAtIndex:1];
     int ourSalary = ((arc4random_uniform(5000)+100)/100) * 100;
-    Employee* emp = [[Employee alloc] initWithName:str1 LastName:str2 Salary:ourSalary];
+    Employee *emp = [[Employee alloc] initWithName:str1 lastName:str2 salary:ourSalary];
     NSLog(@"new employee is created");
     NSMutableArray *arrayEmployees = [NSMutableArray new];
     arrayEmployees = [self.employeers mutableCopy];
@@ -46,7 +46,7 @@
     self.employeers = [arrayEmployees copy];
 }
 
-- (void)addEmployee:(Employee*)employee
+- (void)addEmployee:(Employee *)employee
 {
     NSMutableArray *arrayEmployees = [NSMutableArray new];
     arrayEmployees = [self.employeers mutableCopy];
@@ -69,7 +69,7 @@
 - (int)calculateAverageSalary
 {
     int midSalary = 0;
-    for (Employee* obj in self.employeers){
+    for (Employee *obj in self.employeers){
         
         midSalary = midSalary + obj.salary;
     }
@@ -80,12 +80,12 @@
     
 }
 
-- (NSString*)employeeWithLowestSalary
+- (NSString *)employeeWithLowestSalary
 {
     Employee *empl = nil;
     
     int minSalary = 5000;
-    for (Employee* obj in self.employeers)
+    for (Employee *obj in self.employeers)
     {
         if (obj.salary < minSalary)
         {
@@ -94,12 +94,12 @@
         }
     }
     
-    NSString* finalResult = [NSString stringWithFormat:@"Employee with lowest salary is %@, salary = %d",empl.fullName,minSalary];
+    NSString *finalResult = [NSString stringWithFormat:@"Employee with lowest salary is %@, salary = %d", empl.fullName, minSalary];
     
     return finalResult;
 }
 
-- (NSArray*)employeesWithSalary:(int)salary tolerance:(int)tolerance
+- (NSArray *)employeesWithSalary:(int)salary tolerance:(int)tolerance
 {
     int inputSalary = salary;
     int inputTolerance = tolerance;
@@ -108,7 +108,7 @@
     
     NSMutableArray *arrayEmployees = [NSMutableArray new];
     
-    for(Employee* obj in self.employeers)
+    for(Employee *obj in self.employeers)
     {
         if (obj.salary >= min && obj.salary <= max)
         {
@@ -124,7 +124,7 @@
 
 -(NSString *)description
 {
-    return [NSString stringWithFormat:@"%lu employees in the organization",(unsigned long)[self.employeers count] ];
+    return [NSString stringWithFormat:@"%lu employees in the organization", (unsigned long)[self.employeers count] ];
 }
 
 @end
