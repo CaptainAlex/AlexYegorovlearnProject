@@ -25,7 +25,9 @@
         self.firstName = firstName;
         self.lastName = lastName;
         self.salary = salary;
+
         _fullName = [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
+
     }
     return self;
 }
