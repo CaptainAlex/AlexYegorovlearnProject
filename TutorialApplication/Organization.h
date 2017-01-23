@@ -28,5 +28,8 @@
 
 - (NSArray *)employeesWithSalary:(int)salary tolerance:(int)tolerance;
 
+- (NSArray<Employee *> *)employeers;
+
+
 @end
 

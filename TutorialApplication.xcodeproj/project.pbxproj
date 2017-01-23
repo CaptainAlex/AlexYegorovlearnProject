@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6A48D4C1E35E8DC006AFC10 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A48D4B1E35E8DC006AFC10 /* DetailViewController.m */; };
+		E6B598871E3241C4008C103A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B598861E3241C4008C103A /* MainViewController.m */; };
 		E6DBE46A1E2D1B4E000D639A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DBE4691E2D1B4E000D639A /* main.m */; };
 		E6DBE46D1E2D1B4E000D639A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DBE46C1E2D1B4E000D639A /* AppDelegate.m */; };
 		E6DBE4701E2D1B4E000D639A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DBE46F1E2D1B4E000D639A /* ViewController.m */; };
@@ -18,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E6A48D4A1E35E8DC006AFC10 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		E6A48D4B1E35E8DC006AFC10 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		E6B598851E3241C4008C103A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		E6B598861E3241C4008C103A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		E6DBE4651E2D1B4E000D639A /* TutorialApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TutorialApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6DBE4691E2D1B4E000D639A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6DBE46B1E2D1B4E000D639A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,6 +70,10 @@
 		E6DBE4671E2D1B4E000D639A /* TutorialApplication */ = {
 			isa = PBXGroup;
 			children = (
+				E6A48D4A1E35E8DC006AFC10 /* DetailViewController.h */,
+				E6A48D4B1E35E8DC006AFC10 /* DetailViewController.m */,
+				E6B598851E3241C4008C103A /* MainViewController.h */,
+				E6B598861E3241C4008C103A /* MainViewController.m */,
 				E6DBE4821E2D1B85000D639A /* Organization.h */,
 				E6DBE4831E2D1B85000D639A /* Organization.m */,
 				E6DBE47F1E2D1B71000D639A /* Employee.h */,
@@ -161,10 +171,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6DBE4701E2D1B4E000D639A /* ViewController.m in Sources */,
+				E6B598871E3241C4008C103A /* MainViewController.m in Sources */,
 				E6DBE4811E2D1B71000D639A /* Employee.m in Sources */,
 				E6DBE46D1E2D1B4E000D639A /* AppDelegate.m in Sources */,
 				E6DBE46A1E2D1B4E000D639A /* main.m in Sources */,
 				E6DBE4841E2D1B85000D639A /* Organization.m in Sources */,
+				E6A48D4C1E35E8DC006AFC10 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +333,7 @@
 				E6DBE47E1E2D1B4E000D639A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

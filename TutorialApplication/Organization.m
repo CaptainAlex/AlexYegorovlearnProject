@@ -17,7 +17,15 @@
 
 @implementation Organization
 
+
+-(NSArray<Employee *> *)employeers{
+    
+    return _employeers;
+}
+
+
 - (id)initWithName:(NSString *)name
+
 {
     self = [super init];
     
@@ -96,7 +104,9 @@
         }
     }
     
+
     NSString *finalResult = [NSString stringWithFormat:@"Employee with lowest salary is %@, salary = %d", empl.fullName, minSalary];
+
     
     return finalResult;
 }

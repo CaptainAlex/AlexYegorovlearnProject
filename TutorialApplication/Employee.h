@@ -11,11 +11,18 @@
 @interface Employee : NSObject
 
 
-@property(assign,nonatomic)int salary;
+@property(assign, nonatomic)int salary;
 
-@property(strong,nonatomic,readonly)NSString *fullName;
+
+@property(strong, nonatomic, readonly)NSString *fullName;
 
 
 - (id) initWithName:(NSString *)firstName lastName:(NSString *)lastName salary:(int)salary;
+
+
+-(NSString *)firstName;
+
+-(NSString *)lastName;
+
 
 @end
