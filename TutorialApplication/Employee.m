@@ -17,6 +17,16 @@
 
 @implementation Employee
 
+-(NSString *)firstName{
+    
+    return  _firstName;
+}
+
+-(NSString *)lastName{
+    
+    return _lastName;
+}
+
 - (id) initWithName: (NSString *)firstName lastName:(NSString *)lastName salary:(int)salary
 {
     self = [super init];

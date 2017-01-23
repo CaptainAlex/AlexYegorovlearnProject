@@ -17,6 +17,11 @@
 
 @implementation Organization
 
+-(NSArray<Employee *> *)employeers{
+    
+    return _employeers;
+}
+
 - (id)initWithName:(NSString*)name
 {
     self = [super init];
