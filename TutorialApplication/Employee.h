@@ -18,5 +18,4 @@
 
 - (id) initWithName:(NSString *)firstName lastName:(NSString *)lastName salary:(int)salary;
 
-
 @end

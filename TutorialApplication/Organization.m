@@ -10,7 +10,7 @@
 #import "Employee.h"
 @interface Organization()
 
-@property(strong,nonatomic) NSArray<Employee *>* employeers;
+@property(strong,nonatomic) NSArray<Employee *> *employeers;
 @property(assign,nonatomic)int countForSalary;
 
 @end
@@ -69,8 +69,10 @@
 - (int)calculateAverageSalary
 {
     int midSalary = 0;
-    for (Employee *obj in self.employeers){
-        
+
+    for (Employee *obj in self.employeers)
+    {
+
         midSalary = midSalary + obj.salary;
     }
     
@@ -112,7 +114,6 @@
     {
         if (obj.salary >= min && obj.salary <= max)
         {
-            
             [arrayEmployees addObject:obj.fullName];
         }
     }
