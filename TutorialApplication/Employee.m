@@ -17,6 +17,7 @@
 
 @implementation Employee
 
+
 -(NSString *)firstName{
     
     return  _firstName;
@@ -35,7 +36,9 @@
         self.firstName = firstName;
         self.lastName = lastName;
         self.salary = salary;
-        _fullName = [NSString stringWithFormat:@"%@ %@",self.firstName,self.lastName];
+
+        _fullName = [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
+
     }
     return self;
 }

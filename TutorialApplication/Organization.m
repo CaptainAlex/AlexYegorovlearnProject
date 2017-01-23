@@ -17,12 +17,15 @@
 
 @implementation Organization
 
+
 -(NSArray<Employee *> *)employeers{
     
     return _employeers;
 }
 
-- (id)initWithName:(NSString*)name
+
+- (id)initWithName:(NSString *)name
+
 {
     self = [super init];
     
@@ -74,8 +77,10 @@
 - (int)calculateAverageSalary
 {
     int midSalary = 0;
-    for (Employee *obj in self.employeers){
-        
+
+    for (Employee *obj in self.employeers)
+    {
+
         midSalary = midSalary + obj.salary;
     }
     
@@ -99,7 +104,9 @@
         }
     }
     
-    NSString *finalResult = [NSString stringWithFormat:@"Employee with lowest salary is %@, salary = %d",empl.fullName,minSalary];
+
+    NSString *finalResult = [NSString stringWithFormat:@"Employee with lowest salary is %@, salary = %d", empl.fullName, minSalary];
+
     
     return finalResult;
 }
@@ -117,7 +124,6 @@
     {
         if (obj.salary >= min && obj.salary <= max)
         {
-            
             [arrayEmployees addObject:obj.fullName];
         }
     }
@@ -129,7 +135,7 @@
 
 -(NSString *)description
 {
-    return [NSString stringWithFormat:@"%lu employees in the organization",(unsigned long)[self.employeers count] ];
+    return [NSString stringWithFormat:@"%lu employees in the organization", (unsigned long)[self.employeers count] ];
 }
 
 @end

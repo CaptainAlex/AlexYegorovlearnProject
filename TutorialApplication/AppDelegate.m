@@ -21,6 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+
 //    Employee *emp1 = [[Employee alloc] initWithName:@"Stepka" lastName:@"Pupkin" salary:3000];
 //    
 //    Organization *org1 =[[Organization alloc] initWithName:@"TheBestOrganization"];
@@ -41,6 +42,7 @@
 //    [org1 removeEmployee:emp1];
 //    
 //    NSLog(@"%@", [org1 description]);
+
     
     return YES;
 }

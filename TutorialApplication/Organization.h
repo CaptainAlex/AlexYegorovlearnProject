@@ -13,6 +13,7 @@
 
 @property(strong,nonatomic)NSString *name;
 
+
 - (id)initWithName:(NSString *)name;
 
 - (void)addEmployeeWithName:(NSString *)nameEmployee;
@@ -28,6 +29,7 @@
 - (NSArray *)employeesWithSalary:(int)salary tolerance:(int)tolerance;
 
 - (NSArray<Employee *> *)employeers;
+
 
 @end
 
