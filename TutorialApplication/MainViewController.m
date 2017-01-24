@@ -1,0 +1,93 @@
+//
+//  MainViewController.m
+//  TutorialApplication
+//
+//  Created by Aleksandr Yegorov on 1/20/17.
+//  Copyright © 2017 Aleksandr Yegorov. All rights reserved.
+//
+
+#import "MainViewController.h"
+#import "Employee.h"
+#import "Organization.h"
+#import "DetailViewController.h"
+
+@interface MainViewController ()
+
+@property (strong, nonatomic) Organization *organization;
+
+@end
+
+@implementation MainViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    Employee *emp1 = [[Employee alloc] initWithName:@"Stepka" lastName:@"Pupkin" salary:3000];
+    
+    self.organization = [[Organization alloc] initWithName:@"TheBestOrganization"];
+    
+    [self.organization addEmployee:emp1];
+    [self.organization addEmployeeWithName:@"Alex Yegorov"];
+    [self.organization addEmployeeWithName:@"Vova Kynovskiy"];
+    [self.organization addEmployeeWithName:@"Misha Davidayn"];
+    
+    NSLog(@"%@", [self.organization description]);
+    
+    NSLog(@"Average salary in the organization = %d", [self.organization calculateAverageSalary]);
+    
+    NSLog(@"%@", [self.organization employeeWithLowestSalary]);
+    
+    NSLog(@"Employees that match the condition: %@", [self.organization employeesWithSalary:2000 tolerance:1000]);
+    
+    [self.organization removeEmployee:emp1];
+    
+    NSLog(@"%@", [self.organization description]);
+    
+}
+
+#pragma mark - TableView
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.organization.employeers count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"listOfEmployees" forIndexPath:indexPath];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"listOfEmployees"];
+    }
+    cell.textLabel.text = self.organization.employeers[indexPath.row].firstName;
+    
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"showDetail" sender:self.organization.employeers[indexPath.row]];
+}
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([segue.identifier isEqualToString:@"showDetail"])
+    {
+        DetailViewController *vc = segue.destinationViewController;
+        vc.employee= (Employee*)sender;
+    }
+}
+
+
+@end
