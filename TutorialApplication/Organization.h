@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+
 @class Employee;
 
 @interface Organization : NSObject
 
-@property(strong,nonatomic)NSString *name;
+@property (strong, nonatomic, readonly) NSArray<Employee *> *employeers;
 
+@property (strong, nonatomic) NSString *name;
 
 - (id)initWithName:(NSString *)name;
 
@@ -27,9 +29,6 @@
 - (NSString *)employeeWithLowestSalary;
 
 - (NSArray *)employeesWithSalary:(int)salary tolerance:(int)tolerance;
-
-- (NSArray<Employee *> *)employeers;
-
 
 @end
 

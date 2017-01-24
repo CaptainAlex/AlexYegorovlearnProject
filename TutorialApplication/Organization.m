@@ -8,21 +8,16 @@
 
 #import "Organization.h"
 #import "Employee.h"
+
 @interface Organization()
 
-@property(strong,nonatomic) NSArray<Employee *> *employeers;
-@property(assign,nonatomic)int countForSalary;
+@property (strong, nonatomic) NSArray<Employee *> *employeers;
+
+@property (assign, nonatomic) int countForSalary;
 
 @end
 
 @implementation Organization
-
-
--(NSArray<Employee *> *)employeers{
-    
-    return _employeers;
-}
-
 
 - (id)initWithName:(NSString *)name
 
@@ -104,10 +99,8 @@
         }
     }
     
-
     NSString *finalResult = [NSString stringWithFormat:@"Employee with lowest salary is %@, salary = %d", empl.fullName, minSalary];
 
-    
     return finalResult;
 }
 

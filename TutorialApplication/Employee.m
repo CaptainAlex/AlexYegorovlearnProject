@@ -10,25 +10,14 @@
 
 @interface Employee()
 
-@property(strong,nonatomic)NSString *firstName;
-@property(strong,nonatomic)NSString *lastName;
+@property (strong, nonatomic) NSString *firstName;
+@property (strong, nonatomic) NSString *lastName;
 
 @end
 
 @implementation Employee
 
-
--(NSString *)firstName{
-    
-    return  _firstName;
-}
-
--(NSString *)lastName{
-    
-    return _lastName;
-}
-
-- (id) initWithName: (NSString *)firstName lastName:(NSString *)lastName salary:(int)salary
+- (id) initWithName:(NSString *)firstName lastName:(NSString *)lastName salary:(int)salary
 {
     self = [super init];
     if(self)
