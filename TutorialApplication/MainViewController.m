@@ -10,8 +10,9 @@
 #import "Employee.h"
 #import "Organization.h"
 #import "DetailViewController.h"
+#import "CreateEmployeeViewController.h"
 
-@interface MainViewController ()
+@interface MainViewController () <CreateEmployeeViewControllerDelegate>
 
 @property (strong, nonatomic) Organization *organization;
 @property (weak, nonatomic) Employee *selectedEmployee;
@@ -46,6 +47,13 @@
     NSLog(@"%lu employees in the organization", self.organization.employees.count);
 }
 
+-(void)employeeFromController:(Employee *)employee
+{
+    NSLog(@"method employeeFromController was used");
+    [self.organization addEmployee:employee];
+    [self.tableView reloadData];
+}
+
 #pragma mark - TableView
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -71,7 +79,7 @@
 {
     self.selectedEmployee = self.organization.employees[indexPath.row];
     
-    [self performSegueWithIdentifier:@"showDetail" sender:self];
+    [self performSegueWithIdentifier:@"showDetail" sender:self.selectedEmployee];
     
     NSLog(@"Selected Name in Did select: %@", self.selectedEmployee.firstName);
 }
@@ -84,6 +92,11 @@
     {
         DetailViewController *vc = segue.destinationViewController;
         vc.employee= self.selectedEmployee;
+    }
+    if ([segue.identifier isEqualToString:@"createEmployee"])
+    {
+        CreateEmployeeViewController *createEmployeeViewController = segue.destinationViewController;
+        [createEmployeeViewController setDelegate:self];
     }
 }
 
