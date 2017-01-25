@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class CreateEmployeeViewController;
 @class Employee;
-@class Organization;
 
 @interface MainViewController : UITableViewController
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *createNewEmployee;
 
 @end
