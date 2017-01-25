@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E69A2C221E38BDE800D1CC47 /* CreateEmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E69A2C211E38BDE800D1CC47 /* CreateEmployeeViewController.m */; };
 		E6A48D4C1E35E8DC006AFC10 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A48D4B1E35E8DC006AFC10 /* DetailViewController.m */; };
 		E6B598871E3241C4008C103A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B598861E3241C4008C103A /* MainViewController.m */; };
 		E6DBE46A1E2D1B4E000D639A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DBE4691E2D1B4E000D639A /* main.m */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E69A2C201E38BDE800D1CC47 /* CreateEmployeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEmployeeViewController.h; sourceTree = "<group>"; };
+		E69A2C211E38BDE800D1CC47 /* CreateEmployeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEmployeeViewController.m; sourceTree = "<group>"; };
 		E6A48D4A1E35E8DC006AFC10 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		E6A48D4B1E35E8DC006AFC10 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		E6B598851E3241C4008C103A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -70,6 +73,8 @@
 		E6DBE4671E2D1B4E000D639A /* TutorialApplication */ = {
 			isa = PBXGroup;
 			children = (
+				E69A2C201E38BDE800D1CC47 /* CreateEmployeeViewController.h */,
+				E69A2C211E38BDE800D1CC47 /* CreateEmployeeViewController.m */,
 				E6A48D4A1E35E8DC006AFC10 /* DetailViewController.h */,
 				E6A48D4B1E35E8DC006AFC10 /* DetailViewController.m */,
 				E6B598851E3241C4008C103A /* MainViewController.h */,
@@ -174,6 +179,7 @@
 				E6B598871E3241C4008C103A /* MainViewController.m in Sources */,
 				E6DBE4811E2D1B71000D639A /* Employee.m in Sources */,
 				E6DBE46D1E2D1B4E000D639A /* AppDelegate.m in Sources */,
+				E69A2C221E38BDE800D1CC47 /* CreateEmployeeViewController.m in Sources */,
 				E6DBE46A1E2D1B4E000D639A /* main.m in Sources */,
 				E6DBE4841E2D1B85000D639A /* Organization.m in Sources */,
 				E6A48D4C1E35E8DC006AFC10 /* DetailViewController.m in Sources */,
