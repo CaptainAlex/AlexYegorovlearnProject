@@ -79,7 +79,7 @@
 {
     self.selectedEmployee = self.organization.employees[indexPath.row];
     
-    [self performSegueWithIdentifier:@"showDetail" sender:self.selectedEmployee];
+    [self performSegueWithIdentifier:@"showDetail" sender:self];
     
     NSLog(@"Selected Name in Did select: %@", self.selectedEmployee.firstName);
 }
