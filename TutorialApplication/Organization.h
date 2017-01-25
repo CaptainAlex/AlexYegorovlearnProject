@@ -12,7 +12,7 @@
 
 @interface Organization : NSObject
 
-@property (strong, nonatomic, readonly) NSArray<Employee *> *employeers;
+@property (strong, nonatomic, readonly) NSArray<Employee *> *employees;
 
 @property (strong, nonatomic) NSString *name;
 

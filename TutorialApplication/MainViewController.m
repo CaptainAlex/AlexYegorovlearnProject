@@ -14,6 +14,7 @@
 @interface MainViewController ()
 
 @property (strong, nonatomic) Organization *organization;
+@property (weak, nonatomic) Employee *selectedEmployee;
 
 @end
 
@@ -32,7 +33,7 @@
     [self.organization addEmployeeWithName:@"Vova Kynovskiy"];
     [self.organization addEmployeeWithName:@"Misha Davidayn"];
     
-    NSLog(@"%@", [self.organization description]);
+    NSLog(@"%lu employees in the organization", self.organization.employees.count);
     
     NSLog(@"Average salary in the organization = %d", [self.organization calculateAverageSalary]);
     
@@ -42,8 +43,7 @@
     
     [self.organization removeEmployee:emp1];
     
-    NSLog(@"%@", [self.organization description]);
-    
+    NSLog(@"%lu employees in the organization", self.organization.employees.count);
 }
 
 #pragma mark - TableView
@@ -55,39 +55,36 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.organization.employeers count];
+    return [self.organization.employees count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"listOfEmployees" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EmployeeCell" forIndexPath:indexPath];
     
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"listOfEmployees"];
-    }
-    cell.textLabel.text = self.organization.employeers[indexPath.row].firstName;
+    cell.textLabel.text = self.organization.employees[indexPath.row].firstName;
     
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"showDetail" sender:self.organization.employeers[indexPath.row]];
+    self.selectedEmployee = self.organization.employees[indexPath.row];
+    
+    [self performSegueWithIdentifier:@"showDetail" sender:self];
+    
+    NSLog(@"Selected Name in Did select: %@", self.selectedEmployee.firstName);
 }
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
     if ([segue.identifier isEqualToString:@"showDetail"])
     {
         DetailViewController *vc = segue.destinationViewController;
-        vc.employee= (Employee*)sender;
+        vc.employee= self.selectedEmployee;
     }
 }
-
 
 @end
