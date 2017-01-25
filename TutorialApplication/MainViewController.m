@@ -15,6 +15,7 @@
 @interface MainViewController () <CreateEmployeeViewControllerDelegate>
 
 @property (strong, nonatomic) Organization *organization;
+
 @property (weak, nonatomic) Employee *selectedEmployee;
 
 @end
