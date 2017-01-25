@@ -47,7 +47,7 @@
     NSLog(@"%lu employees in the organization", self.organization.employees.count);
 }
 
--(void)employeeFromController:(Employee *)employee
+- (void)employeeFromController:(Employee *)employee
 {
     NSLog(@"method employeeFromController was used");
     [self.organization addEmployee:employee];
