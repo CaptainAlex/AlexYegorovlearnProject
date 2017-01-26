@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @class Employee;
-@class Organization;
 
 @interface MainViewController : UITableViewController
 

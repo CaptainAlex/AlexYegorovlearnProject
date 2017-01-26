@@ -36,8 +36,8 @@
 {
     NSString *stringName=nameEmployee;
     NSArray *items = [stringName componentsSeparatedByString:@" "];
-    NSString *str1=[items objectAtIndex:0];
-    NSString *str2=[items objectAtIndex:1];
+    NSString *str1=items[0];
+    NSString *str2=items[1];
     int ourSalary = ((arc4random_uniform(5000)+100)/100) * 100;
     Employee *emp = [[Employee alloc] initWithName:str1 lastName:str2 salary:ourSalary];
     NSLog(@"new employee is created");
