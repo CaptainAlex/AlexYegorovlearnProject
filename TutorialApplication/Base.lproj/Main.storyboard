@@ -69,17 +69,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="addNewEmployee:" destination="uWu-zi-wjV" eventType="touchUpInside" id="n1q-SN-K41"/>
+                                    <action selector="addNewEmployee" destination="uWu-zi-wjV" eventType="touchUpInside" id="RPU-Ps-923"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="addFirstName" destination="ckV-KN-g0W" id="534-4R-hqe"/>
-                        <outlet property="addLastName" destination="U4v-pz-JBd" id="t4e-CV-c9D"/>
-                        <outlet property="addSalary" destination="1BF-an-wJ9" id="JVn-7u-8eb"/>
-                        <outlet property="saveButton" destination="h3E-1d-ZDX" id="uO4-4P-xad"/>
+                        <outlet property="firstNameTextField" destination="ckV-KN-g0W" id="rCx-9z-L8E"/>
+                        <outlet property="lastNameTextField" destination="U4v-pz-JBd" id="GEw-ww-GHH"/>
+                        <outlet property="salaryTextField" destination="1BF-an-wJ9" id="GtL-0F-I79"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ifv-4s-boW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -117,7 +116,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="createNewEmployee" destination="HYk-6S-Mta" id="ZCc-kg-6BQ"/>
                         <segue destination="6gv-E3-HlO" kind="show" identifier="showDetail" id="REP-Lt-531"/>
                     </connections>
                 </tableViewController>

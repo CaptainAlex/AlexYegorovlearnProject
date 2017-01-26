@@ -12,7 +12,7 @@
 #import "DetailViewController.h"
 #import "CreateEmployeeViewController.h"
 
-@interface MainViewController () <CreateEmployeeViewControllerDelegate>
+@interface MainViewController () <CreateEmployeeDelegate>
 
 @property (strong, nonatomic) Organization *organization;
 
@@ -48,7 +48,7 @@
     NSLog(@"%lu employees in the organization", self.organization.employees.count);
 }
 
-- (void)employeeFromController:(Employee *)employee
+- (void)onEmployeeCreated:(Employee *)employee
 {
     NSLog(@"method employeeFromController was used");
     [self.organization addEmployee:employee];
@@ -94,10 +94,10 @@
         DetailViewController *vc = segue.destinationViewController;
         vc.employee= self.selectedEmployee;
     }
-    if ([segue.identifier isEqualToString:@"createEmployee"])
+    else if ([segue.identifier isEqualToString:@"createEmployee"])
     {
         CreateEmployeeViewController *createEmployeeViewController = segue.destinationViewController;
-        [createEmployeeViewController setDelegate:self];
+        createEmployeeViewController.delegate = self;
     }
 }
 

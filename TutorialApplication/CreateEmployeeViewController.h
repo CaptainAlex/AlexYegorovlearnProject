@@ -9,28 +9,19 @@
 #import <UIKit/UIKit.h>
 
 @class Employee;
-@class MainViewController;
 
-@protocol CreateEmployeeViewControllerDelegate <NSObject>
+@protocol CreateEmployeeDelegate
 
-@required
-
-- (void)employeeFromController:(Employee *)employee;
+- (void)onEmployeeCreated:(Employee *)employee;
 
 @end
 
 @interface CreateEmployeeViewController : UIViewController
 
-@property (nonatomic, strong) Employee *employee;
+@property (nonatomic, weak) id<CreateEmployeeDelegate> delegate;
 
-@property (nonatomic, weak) id<CreateEmployeeViewControllerDelegate> delegate;
-
-@property (weak, nonatomic) IBOutlet UITextField *addFirstName;
-
-@property (weak, nonatomic) IBOutlet UITextField *addLastName;
-
-@property (weak, nonatomic) IBOutlet UITextField *addSalary;
-
-@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *salaryTextField;
 
 @end

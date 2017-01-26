@@ -7,7 +7,6 @@
 //
 
 #import "CreateEmployeeViewController.h"
-#import "MainViewController.h"
 #import "Employee.h"
 
 @interface CreateEmployeeViewController ()
@@ -16,19 +15,17 @@
 
 @implementation CreateEmployeeViewController
 
-- (IBAction)addNewEmployee:(id)sender
+- (IBAction)addNewEmployee
 {
-    NSString *str = [self.addFirstName text];
-    NSString *str2 = [self.addLastName text];
-    NSString *str3 = [self.addSalary text];
-    int salary = [str3 intValue];
+    NSString *firstName = self.firstNameTextField.text;
+    NSString *lastName = self.lastNameTextField.text;
+    NSString *salary = self.salaryTextField.text;
+    int salaryInt = [salary intValue];
     
-    self.employee = [[Employee alloc] initWithName:str lastName:str2 salary:salary];
+    Employee *newEmp = [[Employee alloc] initWithName:firstName lastName:lastName salary:salaryInt];
     
-    if ([self.delegate respondsToSelector:@selector(employeeFromController:)])
-    {
-        [self.delegate employeeFromController:self.employee];
-    }
+        [self.delegate onEmployeeCreated:newEmp];
+    
     NSLog(@"new object is created(delegate)");
     [self.navigationController popViewControllerAnimated:true];
 }
