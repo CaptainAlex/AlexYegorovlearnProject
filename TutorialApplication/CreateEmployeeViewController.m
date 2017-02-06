@@ -21,13 +21,13 @@
     int salaryInt = [salary intValue];
     
     
-    FFEmployee *entityNameObj = [NSEntityDescription insertNewObjectForEntityForName:@"FFEmployee" inManagedObjectContext:[DatabaseController sharedInstance].context];
-    entityNameObj.firstName = firstName;
-    entityNameObj.lastName = lastName;
-    entityNameObj.salary = salaryInt;
-    entityNameObj.fullName = fullName;
+    FFEmployee *newEmployee = [NSEntityDescription insertNewObjectForEntityForName:@"FFEmployee" inManagedObjectContext:[DatabaseController sharedInstance].context];
+    newEmployee.firstName = firstName;
+    newEmployee.lastName = lastName;
+    newEmployee.salary = salaryInt;
+    newEmployee.fullName = fullName;
     
-    [self.delegate onEmployeeCreated:entityNameObj];
+    [self.delegate onEmployeeCreated:newEmployee];
     
     NSLog(@"new object is created(delegate)");
     [self.navigationController popViewControllerAnimated:true];

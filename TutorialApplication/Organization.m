@@ -13,33 +13,37 @@
 #import "FFEmployee+CoreDataClass.h"
 #import "FFOrganization+CoreDataClass.h"
 
+@interface FFOrganization()
+
+@end
+
 @implementation FFOrganization (Organization)
 
-- (FFEmployee*)addEmployeeWithName:(NSString *)nameEmployee
+- (void)addEmployeeWithName:(NSString *)nameEmployee
 {
     NSString *stringName=nameEmployee;
     NSArray *items = [stringName componentsSeparatedByString:@" "];
-    NSString *str1=items[0];
-    NSString *str2=items[1];
+    NSString *firstName=items[0];
+    NSString *lastName=items[1];
     int ourSalary = ((arc4random_uniform(5000)+100)/100) * 100;
     
-    FFEmployee *entityNameObj = [NSEntityDescription insertNewObjectForEntityForName:@"FFEmployee" inManagedObjectContext:[DatabaseController sharedInstance].context];
-    entityNameObj.firstName = str1;
-    entityNameObj.lastName = str2;
-    entityNameObj.salary = ourSalary;
-    entityNameObj.fullName = nameEmployee;
+    FFEmployee *newEmployee = [NSEntityDescription insertNewObjectForEntityForName:@"FFEmployee" inManagedObjectContext:[DatabaseController sharedInstance].context];
+    newEmployee.firstName = firstName;
+    newEmployee.lastName = lastName;
+    newEmployee.salary = ourSalary;
+    newEmployee.fullName = nameEmployee;
     
     NSLog(@"new employee is created");
     
-    return entityNameObj;
+    [self addEmployeesObject:newEmployee];
 }
 
-- (NSString *)employeeWithLowestSalary:(NSArray*)myEmployees
+- (NSString *)employeeWithLowestSalary
 {
     FFEmployee *empl = nil;
     
     int minSalary = 5000;
-    for (FFEmployee *obj in myEmployees)
+    for (FFEmployee *obj in self.employees)
     {
         if (obj.salary < minSalary)
         {
@@ -53,7 +57,7 @@
     return finalResult;
 }
 
-- (NSArray *)employeesWithSalary:(int)salary tolerance:(int)tolerance employess:(NSArray*)myEmployees
+- (NSArray *)employeesWithSalary:(int)salary tolerance:(int)tolerance
 {
     int inputSalary = salary;
     int inputTolerance = tolerance;
@@ -62,7 +66,7 @@
     
     NSMutableArray *arrayEmployees = [NSMutableArray new];
     
-    for(FFEmployee *obj in myEmployees)
+    for(FFEmployee *obj in self.employees)
     {
         if (obj.salary >= min && obj.salary <= max)
         {

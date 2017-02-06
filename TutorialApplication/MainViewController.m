@@ -18,7 +18,7 @@
 
 @property (strong, nonatomic) FFOrganization *organization;
 
-@property (strong, nonatomic) NSArray<FFEmployee*> *myEmployees;
+@property (strong, nonatomic) NSArray *arrayWithEmployees;
 
 @property (weak, nonatomic) FFEmployee *selectedEmployee;
 
@@ -37,30 +37,28 @@
         self.organization = [NSEntityDescription insertNewObjectForEntityForName:@"FFOrganization" inManagedObjectContext:[DatabaseController sharedInstance].context];
         self.organization.name = @"Best";
         
-        FFEmployee *entityNameObj = [NSEntityDescription insertNewObjectForEntityForName:@"FFEmployee" inManagedObjectContext:[DatabaseController sharedInstance].context];
-        entityNameObj.firstName = @"Eva";
-        entityNameObj.lastName = @"Green";
-        entityNameObj.salary = 15600;
-        entityNameObj.fullName = @"Eva Green";
+        FFEmployee *newEmployee = [NSEntityDescription insertNewObjectForEntityForName:@"FFEmployee" inManagedObjectContext:[DatabaseController sharedInstance].context];
+        newEmployee.firstName = @"Eva";
+        newEmployee.lastName = @"Green";
+        newEmployee.salary = 15600;
+        newEmployee.fullName = @"Eva Green";
         
-        [self.organization addEmployeesObject:entityNameObj];
+        [self.organization addEmployeesObject:newEmployee];
         
-        [self.organization addEmployeesObject:[self.organization addEmployeeWithName:@"Miss Smith"]];
+        [self.organization addEmployeeWithName:@"Miss Smith"];
 
     }
+        [DatabaseController saveContext];
     
-    [DatabaseController saveContext:[DatabaseController sharedInstance].context];
+    NSSortDescriptor *sort=[[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
     
-    self.myEmployees = [DatabaseController requestResultsForPredicate:nil sortDescriptors:nil entity:@"FFEmployee"];
+    self.arrayWithEmployees = [[self.organization.employees allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sort]];
     
-    NSNumber *averageSalary = [self.myEmployees valueForKeyPath:@"@avg.salary"];
+    NSLog(@"Average salary in the organization = %@", [self.organization.employees valueForKeyPath:@"@avg.salary"]);
     
-    NSLog(@"Average salary in the organization = %@", averageSalary);
+    NSLog(@"%@", [self.organization employeeWithLowestSalary]);
     
-    NSLog(@"%@", [self.organization employeeWithLowestSalary:self.myEmployees]);
-    
-    NSLog(@"Employees that match the condition: %@", [self.organization employeesWithSalary:15000 tolerance:1000 employess:self.myEmployees]);
-
+    NSLog(@"Employees that match the condition: %@", [self.organization employeesWithSalary:15000 tolerance:5000]);
 }
 
 - (void)onEmployeeCreated:(FFEmployee *)employee
@@ -69,11 +67,11 @@
     [self.organization addEmployeesObject:employee];
     
     [DatabaseController saveContext:[DatabaseController sharedInstance].context];
+    self.arrayWithEmployees = [DatabaseController requestResultsForPredicate:nil sortDescriptors:nil entity:@"FFEmployee"];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    self.myEmployees = [DatabaseController requestResultsForPredicate:nil sortDescriptors:nil entity:@"FFEmployee"];
     [self.tableView reloadData];
 }
 
@@ -86,23 +84,23 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.myEmployees count];
+    return self.organization.employees.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EmployeeCell" forIndexPath:indexPath];
     
-    NSManagedObject *employee = self.myEmployees [indexPath.row];
+    FFEmployee *employee = self.arrayWithEmployees[indexPath.row];
     
-    cell.textLabel.text = [employee valueForKey:@"fullName"];
+    cell.textLabel.text = employee.fullName;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.selectedEmployee = self.myEmployees [indexPath.row];
+    self.selectedEmployee = self.arrayWithEmployees[indexPath.row];
     
     [self performSegueWithIdentifier:@"showDetail" sender:self];
     
@@ -135,12 +133,12 @@
     NSManagedObjectContext *context = [DatabaseController sharedInstance].context;
     
         NSMutableArray *arrayEmployees = [NSMutableArray new];
-        arrayEmployees = [self.myEmployees mutableCopy];
+        arrayEmployees = [self.arrayWithEmployees mutableCopy];
     
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
         // Delete object from database
-        [context deleteObject:[arrayEmployees objectAtIndex:indexPath.row]];
+        [context deleteObject:arrayEmployees[indexPath.row]];
         
         NSError *error = nil;
         if (![context save:&error])
@@ -150,7 +148,7 @@
         }
         // Remove device from table view
         [arrayEmployees removeObjectAtIndex:indexPath.row];
-        self.myEmployees = [arrayEmployees copy];
+        self.arrayWithEmployees = [arrayEmployees copy];
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }

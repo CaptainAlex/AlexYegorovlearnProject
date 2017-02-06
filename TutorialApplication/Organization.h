@@ -13,11 +13,11 @@
 
 @interface FFOrganization (Organization)
 
-- (FFEmployee*)addEmployeeWithName:(NSString *)nameEmployee;
+- (void)addEmployeeWithName:(NSString *)nameEmployee;
 
-- (NSString *)employeeWithLowestSalary:(NSArray*)myEmployees;
+- (NSString *)employeeWithLowestSalary;
 
-- (NSArray *)employeesWithSalary:(int)salary tolerance:(int)tolerance employess:(NSArray*)myEmployees;
+- (NSArray *)employeesWithSalary:(int)salary tolerance:(int)tolerance;
 
 @end
 
