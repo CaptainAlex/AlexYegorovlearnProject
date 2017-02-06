@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class FFOrganization;
 @class Employee;
 
 @interface MainViewController : UITableViewController
