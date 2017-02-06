@@ -7,24 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FFOrganization+CoreDataClass.h"
+#import "FFOrganization+CoreDataProperties.h"
+@class FFEmployee;
 
-@class Employee;
-
-@interface Organization : NSObject
-
-@property (strong, nonatomic, readonly) NSArray<Employee *> *employees;
-
-@property (strong, nonatomic) NSString *name;
-
-- (id)initWithName:(NSString *)name;
+@interface FFOrganization (Organization)
 
 - (void)addEmployeeWithName:(NSString *)nameEmployee;
-
-- (void)addEmployee:(Employee *)employee;
-
-- (void)removeEmployee:(Employee *)employee;
-
-- (int)calculateAverageSalary;
 
 - (NSString *)employeeWithLowestSalary;
 

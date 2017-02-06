@@ -8,6 +8,8 @@
 
 #import "DetailViewController.h"
 #import "Employee.h"
+#import "FFEmployee+CoreDataClass.h"
+#import "FFEmployee+CoreDataProperties.h"
 
 @interface DetailViewController ()
 
