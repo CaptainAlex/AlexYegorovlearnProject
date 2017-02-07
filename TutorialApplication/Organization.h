@@ -13,6 +13,8 @@
 
 @interface FFOrganization (Organization)
 
+@property (strong, nonatomic, readonly) NSArray<FFEmployee *> *sortedEmployees;
+
 - (void)addEmployeeWithName:(NSString *)nameEmployee;
 
 - (NSString *)employeeWithLowestSalary;

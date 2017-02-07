@@ -80,7 +80,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EmployeeCell" forIndexPath:indexPath];
     
-    FFEmployee *employee = self.organization.employees.allObjects[indexPath.row];
+    FFEmployee *employee = self.organization.sortedEmployees[indexPath.row];
     
     cell.textLabel.text =employee.fullName;
     
@@ -89,7 +89,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.selectedEmployee = self.organization.employees.allObjects[indexPath.row];
+    self.selectedEmployee = self.organization.sortedEmployees[indexPath.row];
     
     [self performSegueWithIdentifier:@"showDetail" sender:self];
     
@@ -123,7 +123,7 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        [self.organization removeEmployeesObject:self.organization.employees.allObjects[indexPath.row]];
+        [self.organization removeEmployeesObject:self.organization.sortedEmployees[indexPath.row]];
         
         NSError *error = nil;
         if (![context save:&error])

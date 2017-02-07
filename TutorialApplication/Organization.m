@@ -19,6 +19,13 @@
 
 @implementation FFOrganization (Organization)
 
+-(NSArray<FFEmployee *> *)sortedEmployees
+{
+    NSSortDescriptor *sort=[[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
+    
+    return [[self.employees allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sort]];
+}
+
 - (void)addEmployeeWithName:(NSString *)nameEmployee
 {
     NSString *stringName=nameEmployee;
