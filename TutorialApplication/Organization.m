@@ -31,7 +31,6 @@
     newEmployee.firstName = firstName;
     newEmployee.lastName = lastName;
     newEmployee.salary = ourSalary;
-    newEmployee.fullName = nameEmployee;
     
     NSLog(@"new employee is created");
     
@@ -52,7 +51,7 @@
         }
     }
     
-    NSString *finalResult = [NSString stringWithFormat:@"Employee with lowest salary is %@, salary = %d", empl.fullName, minSalary];
+    NSString *finalResult = [NSString stringWithFormat:@"Employee with lowest salary is  %@, salary = %d", empl.fullName,  minSalary];
 
     return finalResult;
 }

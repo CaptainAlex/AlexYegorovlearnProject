@@ -17,15 +17,12 @@
     NSString *firstName = self.firstNameTextField.text;
     NSString *lastName = self.lastNameTextField.text;
     NSString *salary = self.salaryTextField.text;
-    NSString *fullName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
     int salaryInt = [salary intValue];
-    
     
     FFEmployee *newEmployee = [NSEntityDescription insertNewObjectForEntityForName:@"FFEmployee" inManagedObjectContext:[DatabaseController sharedInstance].context];
     newEmployee.firstName = firstName;
     newEmployee.lastName = lastName;
     newEmployee.salary = salaryInt;
-    newEmployee.fullName = fullName;
     
     [self.delegate onEmployeeCreated:newEmployee];
     

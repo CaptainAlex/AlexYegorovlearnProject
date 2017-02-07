@@ -12,4 +12,6 @@
 
 @interface FFEmployee (Employee)
 
+@property (weak, nonatomic, readonly) NSString *fullName;
+
 @end
