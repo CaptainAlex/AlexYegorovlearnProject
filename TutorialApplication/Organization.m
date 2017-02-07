@@ -21,9 +21,9 @@
 
 -(NSArray<FFEmployee *> *)sortedEmployees
 {
-    NSSortDescriptor *sort=[[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
     
-    return [[self.employees allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sort]];
+    return [[self.employees allObjects] sortedArrayUsingDescriptors:@[sort]];
 }
 
 - (void)addEmployeeWithName:(NSString *)nameEmployee
