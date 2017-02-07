@@ -8,10 +8,7 @@
 
 #import "CreateEmployeeViewController.h"
 #import "Employee.h"
-
-@interface CreateEmployeeViewController ()
-
-@end
+#import "DatabaseController.h"
 
 @implementation CreateEmployeeViewController
 
@@ -22,9 +19,12 @@
     NSString *salary = self.salaryTextField.text;
     int salaryInt = [salary intValue];
     
-    Employee *newEmp = [[Employee alloc] initWithName:firstName lastName:lastName salary:salaryInt];
+    FFEmployee *newEmployee = [NSEntityDescription insertNewObjectForEntityForName:@"FFEmployee" inManagedObjectContext:[DatabaseController sharedInstance].context];
+    newEmployee.firstName = firstName;
+    newEmployee.lastName = lastName;
+    newEmployee.salary = salaryInt;
     
-        [self.delegate onEmployeeCreated:newEmp];
+    [self.delegate onEmployeeCreated:newEmployee];
     
     NSLog(@"new object is created(delegate)");
     [self.navigationController popViewControllerAnimated:true];
