@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class Employee;
+@class FFEmployee;
 
 @protocol CreateEmployeeDelegate
 
-- (void)onEmployeeCreated:(Employee *)employee;
+- (void)onEmployeeCreated:(FFEmployee *)employee;
 
 @end
 

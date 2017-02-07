@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FFEmployee+CoreDataClass.h"
 
-@class Employee;
+@class FFEmployee;
 
 @interface DetailViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *salaryLabel;
 
-@property (strong, nonatomic) Employee *employee;
+@property (weak, nonatomic) FFEmployee *employee;
 
 @end

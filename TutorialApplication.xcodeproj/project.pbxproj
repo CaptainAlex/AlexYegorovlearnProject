@@ -7,17 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E69A2C221E38BDE800D1CC47 /* CreateEmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E69A2C211E38BDE800D1CC47 /* CreateEmployeeViewController.m */; };
-		E6A48D4C1E35E8DC006AFC10 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A48D4B1E35E8DC006AFC10 /* DetailViewController.m */; };
-		E6B598871E3241C4008C103A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B598861E3241C4008C103A /* MainViewController.m */; };
-		E6DBE46A1E2D1B4E000D639A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DBE4691E2D1B4E000D639A /* main.m */; };
-		E6DBE46D1E2D1B4E000D639A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DBE46C1E2D1B4E000D639A /* AppDelegate.m */; };
-		E6DBE4701E2D1B4E000D639A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DBE46F1E2D1B4E000D639A /* ViewController.m */; };
+		E6D8C3F41E3B954F00C321EF /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A48D4B1E35E8DC006AFC10 /* DetailViewController.m */; };
+		E6D8C3F51E3B955300C321EF /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B598861E3241C4008C103A /* MainViewController.m */; };
+		E6D8C3F81E3B955F00C321EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DBE46C1E2D1B4E000D639A /* AppDelegate.m */; };
+		E6D8C3F91E3B956300C321EF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DBE46F1E2D1B4E000D639A /* ViewController.m */; };
+		E6D8C3FB1E3B957B00C321EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DBE4691E2D1B4E000D639A /* main.m */; };
+		E6D8C4031E3B9ACB00C321EF /* CreateEmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E69A2C211E38BDE800D1CC47 /* CreateEmployeeViewController.m */; };
+		E6D8C4071E3B9BD200C321EF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D8C4061E3B9BD200C321EF /* CoreData.framework */; };
+		E6D8C4091E3BA11B00C321EF /* Organization.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DBE4831E2D1B85000D639A /* Organization.m */; };
+		E6D8C40A1E3BA12000C321EF /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DBE4801E2D1B71000D639A /* Employee.m */; };
 		E6DBE4731E2D1B4E000D639A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6DBE4711E2D1B4E000D639A /* Main.storyboard */; };
 		E6DBE4751E2D1B4E000D639A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6DBE4741E2D1B4E000D639A /* Assets.xcassets */; };
 		E6DBE4781E2D1B4E000D639A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6DBE4761E2D1B4E000D639A /* LaunchScreen.storyboard */; };
-		E6DBE4811E2D1B71000D639A /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DBE4801E2D1B71000D639A /* Employee.m */; };
-		E6DBE4841E2D1B85000D639A /* Organization.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DBE4831E2D1B85000D639A /* Organization.m */; };
+		E6F1217A1E407F0D00090373 /* TutorialApplication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6D8C3E11E3B77B000C321EF /* TutorialApplication.xcdatamodeld */; };
+		E6F122101E409C7400090373 /* FFEmployee+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F122091E409C7400090373 /* FFEmployee+CoreDataClass.m */; };
+		E6F122111E409C7400090373 /* FFEmployee+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F1220B1E409C7400090373 /* FFEmployee+CoreDataProperties.m */; };
+		E6F122121E409C7400090373 /* FFOrganization+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F1220D1E409C7400090373 /* FFOrganization+CoreDataClass.m */; };
+		E6F122131E409C7400090373 /* FFOrganization+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F1220F1E409C7400090373 /* FFOrganization+CoreDataProperties.m */; };
+		E6F122161E40A88100090373 /* DatabaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F122141E40A88100090373 /* DatabaseController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +34,8 @@
 		E6A48D4B1E35E8DC006AFC10 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		E6B598851E3241C4008C103A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		E6B598861E3241C4008C103A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		E6D8C3E21E3B77B000C321EF /* TutorialApplication.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TutorialApplication.xcdatamodel; sourceTree = "<group>"; };
+		E6D8C4061E3B9BD200C321EF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E6DBE4651E2D1B4E000D639A /* TutorialApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TutorialApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6DBE4691E2D1B4E000D639A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6DBE46B1E2D1B4E000D639A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -41,6 +50,16 @@
 		E6DBE4801E2D1B71000D639A /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
 		E6DBE4821E2D1B85000D639A /* Organization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Organization.h; sourceTree = "<group>"; };
 		E6DBE4831E2D1B85000D639A /* Organization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Organization.m; sourceTree = "<group>"; };
+		E6F122081E409C7400090373 /* FFEmployee+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FFEmployee+CoreDataClass.h"; sourceTree = "<group>"; };
+		E6F122091E409C7400090373 /* FFEmployee+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FFEmployee+CoreDataClass.m"; sourceTree = "<group>"; };
+		E6F1220A1E409C7400090373 /* FFEmployee+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FFEmployee+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E6F1220B1E409C7400090373 /* FFEmployee+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FFEmployee+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E6F1220C1E409C7400090373 /* FFOrganization+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FFOrganization+CoreDataClass.h"; sourceTree = "<group>"; };
+		E6F1220D1E409C7400090373 /* FFOrganization+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FFOrganization+CoreDataClass.m"; sourceTree = "<group>"; };
+		E6F1220E1E409C7400090373 /* FFOrganization+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FFOrganization+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E6F1220F1E409C7400090373 /* FFOrganization+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FFOrganization+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E6F122141E40A88100090373 /* DatabaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseController.m; path = ../../Downloads/DatabaseController.m; sourceTree = "<group>"; };
+		E6F122151E40A88100090373 /* DatabaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseController.h; path = ../../Downloads/DatabaseController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,17 +67,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D8C4071E3B9BD200C321EF /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E6D8C4051E3B9BD200C321EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6D8C4061E3B9BD200C321EF /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E6DBE45C1E2D1B4D000D639A = {
 			isa = PBXGroup;
 			children = (
+				E6F122081E409C7400090373 /* FFEmployee+CoreDataClass.h */,
+				E6F122091E409C7400090373 /* FFEmployee+CoreDataClass.m */,
+				E6F1220A1E409C7400090373 /* FFEmployee+CoreDataProperties.h */,
+				E6F1220B1E409C7400090373 /* FFEmployee+CoreDataProperties.m */,
+				E6F1220C1E409C7400090373 /* FFOrganization+CoreDataClass.h */,
+				E6F1220D1E409C7400090373 /* FFOrganization+CoreDataClass.m */,
+				E6F1220E1E409C7400090373 /* FFOrganization+CoreDataProperties.h */,
+				E6F1220F1E409C7400090373 /* FFOrganization+CoreDataProperties.m */,
 				E6DBE4671E2D1B4E000D639A /* TutorialApplication */,
 				E6DBE4661E2D1B4E000D639A /* Products */,
+				E6D8C4051E3B9BD200C321EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +110,8 @@
 		E6DBE4671E2D1B4E000D639A /* TutorialApplication */ = {
 			isa = PBXGroup;
 			children = (
+				E6F122141E40A88100090373 /* DatabaseController.m */,
+				E6F122151E40A88100090373 /* DatabaseController.h */,
 				E69A2C201E38BDE800D1CC47 /* CreateEmployeeViewController.h */,
 				E69A2C211E38BDE800D1CC47 /* CreateEmployeeViewController.m */,
 				E6A48D4A1E35E8DC006AFC10 /* DetailViewController.h */,
@@ -92,6 +131,7 @@
 				E6DBE4761E2D1B4E000D639A /* LaunchScreen.storyboard */,
 				E6DBE4791E2D1B4E000D639A /* Info.plist */,
 				E6DBE4681E2D1B4E000D639A /* Supporting Files */,
+				E6D8C3E11E3B77B000C321EF /* TutorialApplication.xcdatamodeld */,
 			);
 			path = TutorialApplication;
 			sourceTree = "<group>";
@@ -175,14 +215,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6DBE4701E2D1B4E000D639A /* ViewController.m in Sources */,
-				E6B598871E3241C4008C103A /* MainViewController.m in Sources */,
-				E6DBE4811E2D1B71000D639A /* Employee.m in Sources */,
-				E6DBE46D1E2D1B4E000D639A /* AppDelegate.m in Sources */,
-				E69A2C221E38BDE800D1CC47 /* CreateEmployeeViewController.m in Sources */,
-				E6DBE46A1E2D1B4E000D639A /* main.m in Sources */,
-				E6DBE4841E2D1B85000D639A /* Organization.m in Sources */,
-				E6A48D4C1E35E8DC006AFC10 /* DetailViewController.m in Sources */,
+				E6F1217A1E407F0D00090373 /* TutorialApplication.xcdatamodeld in Sources */,
+				E6F122131E409C7400090373 /* FFOrganization+CoreDataProperties.m in Sources */,
+				E6D8C40A1E3BA12000C321EF /* Employee.m in Sources */,
+				E6D8C4091E3BA11B00C321EF /* Organization.m in Sources */,
+				E6F122101E409C7400090373 /* FFEmployee+CoreDataClass.m in Sources */,
+				E6D8C4031E3B9ACB00C321EF /* CreateEmployeeViewController.m in Sources */,
+				E6F122111E409C7400090373 /* FFEmployee+CoreDataProperties.m in Sources */,
+				E6F122121E409C7400090373 /* FFOrganization+CoreDataClass.m in Sources */,
+				E6D8C3FB1E3B957B00C321EF /* main.m in Sources */,
+				E6D8C3F91E3B956300C321EF /* ViewController.m in Sources */,
+				E6F122161E40A88100090373 /* DatabaseController.m in Sources */,
+				E6D8C3F81E3B955F00C321EF /* AppDelegate.m in Sources */,
+				E6D8C3F51E3B955300C321EF /* MainViewController.m in Sources */,
+				E6D8C3F41E3B954F00C321EF /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +388,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E6D8C3E11E3B77B000C321EF /* TutorialApplication.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E6D8C3E21E3B77B000C321EF /* TutorialApplication.xcdatamodel */,
+			);
+			currentVersion = E6D8C3E21E3B77B000C321EF /* TutorialApplication.xcdatamodel */;
+			path = TutorialApplication.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E6DBE45D1E2D1B4D000D639A /* Project object */;
 }
