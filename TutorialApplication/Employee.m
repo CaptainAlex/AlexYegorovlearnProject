@@ -8,27 +8,11 @@
 
 #import "Employee.h"
 
-@interface Employee()
+@implementation FFEmployee (Employee)
 
-@property (strong, nonatomic) NSString *firstName;
-@property (strong, nonatomic) NSString *lastName;
-
-@end
-
-@implementation Employee
-
-- (id) initWithName:(NSString *)firstName lastName:(NSString *)lastName salary:(int)salary
+-(NSString *)fullName
 {
-    self = [super init];
-    if(self)
-    {
-        self.firstName = firstName;
-        self.lastName = lastName;
-        self.salary = salary;
-
-        _fullName = [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
-    }
-    return self;
+    return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
 }
 
 @end
