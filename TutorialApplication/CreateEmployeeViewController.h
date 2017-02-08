@@ -23,5 +23,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *salaryTextField;
+@property (weak, nonatomic) IBOutlet UITextField *dateOfBirthTextField;
 
 @end

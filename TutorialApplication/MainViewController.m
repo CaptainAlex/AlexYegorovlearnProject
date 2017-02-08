@@ -12,7 +12,6 @@
 #import "DetailViewController.h"
 #import "CreateEmployeeViewController.h"
 #import "DatabaseController.h"
-#import "AppDelegate.h"
 
 @interface MainViewController () <CreateEmployeeDelegate>
 
@@ -35,10 +34,14 @@
         self.organization = [NSEntityDescription insertNewObjectForEntityForName:@"FFOrganization" inManagedObjectContext:[DatabaseController sharedInstance].context];
         self.organization.name = @"Best";
         
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+        
         FFEmployee *newEmployee = [NSEntityDescription insertNewObjectForEntityForName:@"FFEmployee" inManagedObjectContext:[DatabaseController sharedInstance].context];
         newEmployee.firstName = @"Eva";
         newEmployee.lastName = @"Green";
         newEmployee.salary = 15600;
+        newEmployee.dateOfBirth = [dateFormatter dateFromString:@"1986-04-13"];
         
         [self.organization addEmployeesObject:newEmployee];
         
