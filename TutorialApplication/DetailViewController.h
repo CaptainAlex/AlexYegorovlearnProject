@@ -15,6 +15,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *salaryLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *dayOfBirthLabel;
+
 @property (weak, nonatomic) FFEmployee *employee;
 
 @end

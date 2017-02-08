@@ -21,13 +21,14 @@
 {
     [super viewDidLoad];
     
-    // Do any additional setup after loading the view.
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     
     if (self.employee)
     {
-        //self.employee.fullName = [NSString stringWithFormat:@"%@ %@", self.employee.firstName, self.employee.lastName];
         self.salaryLabel.text = [NSString stringWithFormat:@"%@'s salary is %d", self.employee.firstName, self.employee.salary];
         self.navigationItem.title = self.employee.fullName;
+        self.dayOfBirthLabel.text = [NSString stringWithFormat:@"DateOfBirth: %@",[dateFormatter stringFromDate:self.employee.dateOfBirth]];
     }
 }
 
