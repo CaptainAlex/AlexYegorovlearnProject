@@ -9,8 +9,30 @@
 #import "CreateEmployeeViewController.h"
 #import "Employee.h"
 #import "DatabaseController.h"
+#import "HSDatePickerViewController.h"
 
-@implementation CreateEmployeeViewController
+@interface CreateEmployeeViewController() <HSDatePickerViewControllerDelegate>
+
+@property (weak, nonatomic) NSDate *dateOfBirth;
+
+@end
+
+@implementation CreateEmployeeViewController 
+
+-(void)hsDatePickerPickedDate:(NSDate *)date
+{
+    self.dateOfBirth = date;
+    self.dateOfBirthTextField.text = [NSDateFormatter localizedStringFromDate:self.dateOfBirth dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterShortStyle];
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    HSDatePickerViewController *hsdpvc = [HSDatePickerViewController new];
+    
+    [self presentViewController:hsdpvc animated:YES completion:nil];
+    
+    hsdpvc.delegate = self;
+}
 
 - (IBAction)addNewEmployee
 {
@@ -23,6 +45,7 @@
     newEmployee.firstName = firstName;
     newEmployee.lastName = lastName;
     newEmployee.salary = salaryInt;
+    newEmployee.dateOfBirth = self.dateOfBirth;
     
     [self.delegate onEmployeeCreated:newEmployee];
     
