@@ -22,7 +22,7 @@
 -(void)hsDatePickerPickedDate:(NSDate *)date
 {
     self.dateOfBirth = date;
-    self.dateOfBirthTextField.text = [NSDateFormatter localizedStringFromDate:self.dateOfBirth dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterShortStyle];
+    self.dateOfBirthTextField.text = [NSDateFormatter localizedStringFromDate:self.dateOfBirth dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField
