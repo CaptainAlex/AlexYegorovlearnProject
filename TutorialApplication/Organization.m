@@ -34,10 +34,14 @@
     NSString *lastName=items[1];
     int ourSalary = ((arc4random_uniform(5000)+100)/100) * 100;
     
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    
     FFEmployee *newEmployee = [NSEntityDescription insertNewObjectForEntityForName:@"FFEmployee" inManagedObjectContext:[DatabaseController sharedInstance].context];
     newEmployee.firstName = firstName;
     newEmployee.lastName = lastName;
     newEmployee.salary = ourSalary;
+    newEmployee.dateOfBirth = [dateFormatter dateFromString:@"1994-04-01"];
     
     NSLog(@"new employee is created");
     
