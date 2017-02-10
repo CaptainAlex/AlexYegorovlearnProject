@@ -21,14 +21,11 @@
 {
     [super viewDidLoad];
     
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    
     if (self.employee)
     {
         self.salaryLabel.text = [NSString stringWithFormat:@"%@'s salary is %d", self.employee.firstName, self.employee.salary];
         self.navigationItem.title = self.employee.fullName;
-        self.dayOfBirthLabel.text = [NSString stringWithFormat:@"DateOfBirth: %@",[dateFormatter stringFromDate:self.employee.dateOfBirth]];
+        self.dayOfBirthLabel.text = [NSString stringWithFormat:@"DateOfBirth: %@",[NSDateFormatter localizedStringFromDate:self.employee.dateOfBirth dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle]];
     }
 }
 

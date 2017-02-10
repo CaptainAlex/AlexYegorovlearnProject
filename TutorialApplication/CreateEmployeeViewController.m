@@ -11,7 +11,9 @@
 #import "DatabaseController.h"
 #import "HSDatePickerViewController.h"
 
-@interface CreateEmployeeViewController()<HSDatePickerViewControllerDelegate>
+@interface CreateEmployeeViewController() <HSDatePickerViewControllerDelegate>
+
+@property (weak, nonatomic) NSDate *dateOfBirth;
 
 @end
 
@@ -19,20 +21,17 @@
 
 -(void)hsDatePickerPickedDate:(NSDate *)date
 {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    self.dateOfBirthTextField.text = [dateFormatter stringFromDate:date];
+    self.dateOfBirth = date;
+    self.dateOfBirthTextField.text = [NSDateFormatter localizedStringFromDate:self.dateOfBirth dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterShortStyle];
 }
 
--(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+-(void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    HSDatePickerViewController *hsdpvc = [[HSDatePickerViewController alloc]init];
+    HSDatePickerViewController *hsdpvc = [HSDatePickerViewController new];
     
     [self presentViewController:hsdpvc animated:YES completion:nil];
     
     hsdpvc.delegate = self;
-    
-    return YES;
 }
 
 - (IBAction)addNewEmployee
@@ -42,14 +41,11 @@
     NSString *salary = self.salaryTextField.text;
     int salaryInt = [salary intValue];
     
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    
     FFEmployee *newEmployee = [NSEntityDescription insertNewObjectForEntityForName:@"FFEmployee" inManagedObjectContext:[DatabaseController sharedInstance].context];
     newEmployee.firstName = firstName;
     newEmployee.lastName = lastName;
     newEmployee.salary = salaryInt;
-    newEmployee.dateOfBirth = [dateFormatter dateFromString:self.dateOfBirthTextField.text];
+    newEmployee.dateOfBirth = self.dateOfBirth;
     
     [self.delegate onEmployeeCreated:newEmployee];
     
