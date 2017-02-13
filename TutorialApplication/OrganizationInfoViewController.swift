@@ -8,26 +8,24 @@
 
 import UIKit
 
-class OrganizationInfoViewController: UIViewController {
-
+class OrganizationInfoViewController: UIViewController
+{
     var organization: FFOrganization!
 
-    @IBAction func salarySumOffAllEmployees()
+    @IBAction func onSalarySum()
     {
         var salarySum = 0
         
-        for obj in organization.employees!
+        for employeesSalary in self.organization.employees!
         {
-            let int16: Int16 = obj.salary
-            let objSalary: Int = Int(int16)
-            salarySum += objSalary
+            salarySum += Int(employeesSalary.salary)
         }
 
-        let alertController = UIAlertController(title: "sum of salaries", message: String(salarySum), preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Sum of salaries", message: "the total sum of all salaries = \(salarySum)", preferredStyle: .alert)
         
         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(defaultAction)
         
-        present(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
 }

@@ -27,7 +27,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Calculate salary sum"/>
                                 <connections>
-                                    <action selector="salarySumOffAllEmployees" destination="XdH-8A-9fa" eventType="touchUpInside" id="izf-br-RLa"/>
+                                    <action selector="onSalarySum" destination="XdH-8A-9fa" eventType="touchUpInside" id="TFr-OF-PYn"/>
                                 </connections>
                             </button>
                         </subviews>
