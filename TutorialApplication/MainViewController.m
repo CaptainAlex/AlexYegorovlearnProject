@@ -12,6 +12,8 @@
 #import "DetailViewController.h"
 #import "CreateEmployeeViewController.h"
 #import "DatabaseController.h"
+#import "TutorialApplication-swift.h"
+
 
 @interface MainViewController () <CreateEmployeeDelegate>
 
@@ -112,6 +114,11 @@
     {
         CreateEmployeeViewController *createEmployeeViewController = segue.destinationViewController;
         createEmployeeViewController.delegate = self;
+    }
+    else if ([segue.identifier isEqualToString:@"swiftEdit"])
+    {
+        OrganizationInfoViewController *vc = segue.destinationViewController;
+        vc.organization = self.organization;
     }
 }
 

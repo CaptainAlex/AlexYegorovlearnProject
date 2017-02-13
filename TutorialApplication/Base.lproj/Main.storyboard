@@ -10,6 +10,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Organization Info View Controller-->
+        <scene sceneID="yFQ-7R-0Sh">
+            <objects>
+                <viewController id="XdH-8A-9fa" customClass="OrganizationInfoViewController" customModule="TutorialApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mjR-if-42W"/>
+                        <viewControllerLayoutGuide type="bottom" id="szc-ST-G3o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EjI-o9-4dl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSW-8S-LST">
+                                <rect key="frame" x="112" y="318" width="151" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Calculate salary sum"/>
+                                <connections>
+                                    <action selector="salarySumOffAllEmployees" destination="XdH-8A-9fa" eventType="touchUpInside" id="izf-br-RLa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nG5-20-Vpq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-372" y="-731.78410794602701"/>
+        </scene>
         <!--Create Employee View Controller-->
         <scene sceneID="Ei1-QU-R5y">
             <objects>
@@ -135,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ifv-4s-boW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-378.5" y="-717.5"/>
+            <point key="canvasLocation" x="345" y="-731"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="3nc-AV-TvD">
@@ -161,6 +189,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="IPb-O5-5I7">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="U5b-8K-J8K">
+                            <connections>
+                                <segue destination="XdH-8A-9fa" kind="show" identifier="swiftEdit" id="Y5S-Sp-Rsk"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+" id="HYk-6S-Mta">
                             <connections>
                                 <segue destination="uWu-zi-wjV" kind="show" identifier="createEmployee" id="91K-fu-eh3"/>
