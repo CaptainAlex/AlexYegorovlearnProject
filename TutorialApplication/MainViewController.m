@@ -115,7 +115,7 @@
         CreateEmployeeViewController *createEmployeeViewController = segue.destinationViewController;
         createEmployeeViewController.delegate = self;
     }
-    else if ([segue.identifier isEqualToString:@"swiftEdit"])
+    else if ([segue.identifier isEqualToString:@"salarySum"])
     {
         OrganizationInfoViewController *vc = segue.destinationViewController;
         vc.organization = self.organization;

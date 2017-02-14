@@ -191,7 +191,7 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="IPb-O5-5I7">
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="U5b-8K-J8K">
                             <connections>
-                                <segue destination="XdH-8A-9fa" kind="show" identifier="swiftEdit" id="Y5S-Sp-Rsk"/>
+                                <segue destination="XdH-8A-9fa" kind="show" identifier="salarySum" id="Y5S-Sp-Rsk"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+" id="HYk-6S-Mta">
