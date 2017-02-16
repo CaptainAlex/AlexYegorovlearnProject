@@ -29,6 +29,10 @@
 {
     [super viewDidLoad];
     
+   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getNotification) name:@"faifly.alex.yegorov" object:nil];
+    //[DatabaseController removeAllObjectsOfEntity:@"FFOrganization"];
+    //[DatabaseController removeAllObjectsOfEntity:@"FFEmployee"];
+    
     self.organization = [DatabaseController requestResultsForPredicate:nil sortDescriptors:nil entity:@"FFOrganization"].firstObject;
     
     if (!self.organization)
@@ -44,6 +48,7 @@
         newEmployee.lastName = @"Green";
         newEmployee.salary = 15600;
         newEmployee.dateOfBirth = [dateFormatter dateFromString:@"1986-04-13"];
+        newEmployee.order = 1;
         
         [self.organization addEmployeesObject:newEmployee];
         
@@ -61,9 +66,18 @@
     NSLog(@"Employees that match the condition: %@", [self.organization employeesWithSalary:15000 tolerance:5000]);
 }
 
+-(void)getNotification
+{
+    NSLog(@"method getNotification is used");
+    [self.tableView reloadData];
+}
+
 - (void)onEmployeeCreated:(FFEmployee *)employee
 {
     NSLog(@"method employeeFromController was used");
+    NSNumber* lastOrder = [self.organization.employees valueForKeyPath:@"@max.order"];
+    employee.order = [lastOrder intValue] + 1;
+    
     [self.organization addEmployeesObject:employee];
     
     [DatabaseController saveContext:[DatabaseController sharedInstance].context];
