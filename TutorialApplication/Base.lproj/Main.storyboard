@@ -22,16 +22,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSW-8S-LST">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSW-8S-LST">
                                 <rect key="frame" x="112" y="318" width="151" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Calculate salary sum"/>
                                 <connections>
                                     <action selector="onSalarySum" destination="XdH-8A-9fa" eventType="touchUpInside" id="TFr-OF-PYn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Yl-dU-LRr">
+                                <rect key="frame" x="112" y="272" width="151" height="30"/>
+                                <state key="normal" title="Randomize order"/>
+                                <connections>
+                                    <action selector="onRandomizeOrder" destination="XdH-8A-9fa" eventType="touchUpInside" id="1iP-xO-hWr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4Yl-dU-LRr" firstAttribute="leading" secondItem="EjI-o9-4dl" secondAttribute="leading" constant="112" id="0vz-XS-e41"/>
+                            <constraint firstAttribute="trailing" secondItem="uSW-8S-LST" secondAttribute="trailing" constant="112" id="NpV-jh-jRZ"/>
+                            <constraint firstAttribute="trailing" secondItem="4Yl-dU-LRr" secondAttribute="trailing" constant="112" id="Ton-LZ-frW"/>
+                            <constraint firstItem="uSW-8S-LST" firstAttribute="leading" secondItem="EjI-o9-4dl" secondAttribute="leading" constant="112" id="dYC-Ac-kWZ"/>
+                            <constraint firstItem="4Yl-dU-LRr" firstAttribute="top" secondItem="mjR-if-42W" secondAttribute="bottom" constant="208" id="e2K-7Y-GEK"/>
+                            <constraint firstItem="uSW-8S-LST" firstAttribute="top" secondItem="4Yl-dU-LRr" secondAttribute="bottom" constant="16" id="ute-LG-2mq"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nG5-20-Vpq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -178,7 +192,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pq6-KJ-TXb" id="5CY-UM-ldG">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
