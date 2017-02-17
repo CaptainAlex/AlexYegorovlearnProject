@@ -8,10 +8,33 @@
 
 import UIKit
 
-class OrganizationInfoViewController: UIViewController
+@objc class OrganizationInfoViewController: UIViewController
 {
     var organization: FFOrganization!
-
+    
+    static let kEmployeesOrderHasChanged = "EmployeesOrderHasChanged"
+    
+    @IBAction func onRandomizeOrder()
+    {
+        var employees = self.organization.sortedEmployees!
+        
+        for i in 0...employees.count - 1
+        {
+            let k = Int(arc4random_uniform(UInt32(employees.count)))
+            if i != k
+            {
+                swap(&employees[i], &employees[k])
+            }
+        }
+        
+        for (index, employee) in employees.enumerated()
+        {
+            employee.order = index + 1
+        }
+        DatabaseController.saveContext()
+        NotificationCenter.default.post(name: Notification.Name(rawValue: OrganizationInfoViewController.kEmployeesOrderHasChanged), object: self)
+    }
+    
     @IBAction func onSalarySum()
     {
         var salarySum = 0
