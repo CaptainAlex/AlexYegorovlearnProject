@@ -27,11 +27,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    OrganizationInfoViewController *org = [OrganizationInfoViewController new];
-    NSString *keyForNotificationForRandomizeOrder = org.kEmployeesOrderHasChanged;
-
-   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getNotificationAfterRandomizeOrder) name:keyForNotificationForRandomizeOrder object:nil];
+    
+    NSString * kEmployeesOrderHasChanged = [OrganizationInfoViewController kEmployeesOrderHasChanged];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(employeesOrderWasRandomized) name:kEmployeesOrderHasChanged object:nil];
     
     self.organization = [DatabaseController requestResultsForPredicate:nil sortDescriptors:nil entity:@"FFOrganization"].firstObject;
     
@@ -66,7 +65,7 @@
     NSLog(@"Employees that match the condition: %@", [self.organization employeesWithSalary:15000 tolerance:5000]);
 }
 
--(void)getNotificationAfterRandomizeOrder
+- (void)employeesOrderWasRandomized
 {
     NSLog(@"method getNotificationAfterRandomizeOrder is used");
     [self.tableView reloadData];
@@ -159,9 +158,9 @@
     }
 }
 
--(void) dealloc
+- (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"kEmployeesOrderHasChanged" object:nil];
 }
 
 @end
