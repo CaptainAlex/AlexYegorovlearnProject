@@ -8,11 +8,11 @@
 
 import UIKit
 
-let kEmployeesOrderHasChanged = "faifly.alex.yegorov"
-
-class OrganizationInfoViewController: UIViewController
+@objc class OrganizationInfoViewController: UIViewController
 {
     var organization: FFOrganization!
+    
+    let kEmployeesOrderHasChanged:String = "employeesOrderHasChanged"
     
     @IBAction func onRandomizeOrder()
     {
@@ -23,32 +23,30 @@ class OrganizationInfoViewController: UIViewController
             countOrderNumbers.append(count)
         }
         
-        var randomEmployees = Set<FFEmployee>()
-
+        var employees = self.organization.sortedEmployees!
+        
         let countEmployees = self.organization.employees!.count
 
         while countOrderNumbers.count > 0
         {
             let random = Int(arc4random_uniform(UInt32(countEmployees+1)))
             
-            print("random number = \(random)")
-            
-            if let index = countOrderNumbers.index(of: random)
-            {
-                for employeeWithOrder in self.organization.employees!
+                for i in 0...employees.count
                 {
-                    if Int(employeeWithOrder.order) == random
+                    if let index = countOrderNumbers.index(of: random)
                     {
-                        randomEmployees.insert(employeeWithOrder)
-                        DatabaseController.saveContext()
-                        self.organization.removeEmployeesObject(employeeWithOrder)
+                        if( i != index)
+                        {
+                        swap(&employees[i], &employees[index])
                         countOrderNumbers.remove(at: index)
-                        DatabaseController.saveContext()
-                    }
+                        }
                 }
             }
         }
-        self.organization.addEmployees(randomEmployees)
+        for (index, employee) in employees.enumerated()
+        {
+            employee.order = index + 1
+        }
         DatabaseController.saveContext()
         NotificationCenter.default.post(name: Notification.Name(rawValue: kEmployeesOrderHasChanged), object: self)
     }

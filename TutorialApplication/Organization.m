@@ -37,14 +37,14 @@
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    NSNumber* lastOrder = [self.employees valueForKeyPath:@"@max.order"];
+    NSNumber *lastOrder = [self.employees valueForKeyPath:@"@max.order"];
     
     FFEmployee *newEmployee = [NSEntityDescription insertNewObjectForEntityForName:@"FFEmployee" inManagedObjectContext:[DatabaseController sharedInstance].context];
     newEmployee.firstName = firstName;
     newEmployee.lastName = lastName;
     newEmployee.salary = ourSalary;
     newEmployee.dateOfBirth = [dateFormatter dateFromString:@"1994-04-01"];
-    newEmployee.order = [lastOrder intValue] + 1;
+    newEmployee.order = lastOrder.intValue + 1;
 
     NSLog(@"new employee is created");
     
