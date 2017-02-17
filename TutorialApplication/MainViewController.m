@@ -28,9 +28,7 @@
 {
     [super viewDidLoad];
     
-    NSString * kEmployeesOrderHasChanged = [OrganizationInfoViewController kEmployeesOrderHasChanged];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(employeesOrderWasRandomized) name:kEmployeesOrderHasChanged object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(employeesOrderWasRandomized) name:[OrganizationInfoViewController kEmployeesOrderHasChanged] object:nil];
     
     self.organization = [DatabaseController requestResultsForPredicate:nil sortDescriptors:nil entity:@"FFOrganization"].firstObject;
     
@@ -160,7 +158,7 @@
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"kEmployeesOrderHasChanged" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:[OrganizationInfoViewController kEmployeesOrderHasChanged] object:nil];
 }
 
 @end

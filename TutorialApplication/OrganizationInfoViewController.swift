@@ -18,12 +18,12 @@ import UIKit
     {
         var employees = self.organization.sortedEmployees!
         
-        for i in 0...employees.count-1
+        for i in 0...employees.count - 1
         {
             let k = Int(arc4random_uniform(UInt32(employees.count)))
-            if ( i != k)
+            if i != k
             {
-            swap(&employees[i], &employees[k])
+                swap(&employees[i], &employees[k])
             }
         }
         
