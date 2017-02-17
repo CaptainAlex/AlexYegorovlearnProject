@@ -14,7 +14,6 @@
 #import "DatabaseController.h"
 #import "TutorialApplication-swift.h"
 
-
 @interface MainViewController () <CreateEmployeeDelegate>
 
 @property (strong, nonatomic) FFOrganization *organization;
@@ -28,6 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    OrganizationInfoViewController *org = [OrganizationInfoViewController new];
+    NSString *keyForNotificationForRandomizeOrder = org.kEmployeesOrderHasChanged;
+
+   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getNotificationAfterRandomizeOrder) name:keyForNotificationForRandomizeOrder object:nil];
     
     self.organization = [DatabaseController requestResultsForPredicate:nil sortDescriptors:nil entity:@"FFOrganization"].firstObject;
     
@@ -44,6 +48,7 @@
         newEmployee.lastName = @"Green";
         newEmployee.salary = 15600;
         newEmployee.dateOfBirth = [dateFormatter dateFromString:@"1986-04-13"];
+        newEmployee.order = 1;
         
         [self.organization addEmployeesObject:newEmployee];
         
@@ -61,9 +66,18 @@
     NSLog(@"Employees that match the condition: %@", [self.organization employeesWithSalary:15000 tolerance:5000]);
 }
 
+-(void)getNotificationAfterRandomizeOrder
+{
+    NSLog(@"method getNotificationAfterRandomizeOrder is used");
+    [self.tableView reloadData];
+}
+
 - (void)onEmployeeCreated:(FFEmployee *)employee
 {
     NSLog(@"method employeeFromController was used");
+    NSNumber *lastOrder = [self.organization.employees valueForKeyPath:@"@max.order"];
+    employee.order = lastOrder.intValue + 1;
+    
     [self.organization addEmployeesObject:employee];
     
     [DatabaseController saveContext:[DatabaseController sharedInstance].context];
@@ -143,6 +157,11 @@
         }
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
+}
+
+-(void) dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
