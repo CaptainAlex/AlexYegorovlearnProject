@@ -3,9 +3,10 @@
     <entity name="FFEmployee" representedClassName="FFEmployee" syncable="YES">
         <attribute name="dateOfBirth" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="salary" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="salary" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="organization" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FFOrganization" inverseName="employees" inverseEntity="FFOrganization" syncable="YES"/>
     </entity>
     <entity name="FFOrganization" representedClassName="FFOrganization" syncable="YES">
@@ -13,7 +14,7 @@
         <relationship name="employees" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FFEmployee" inverseName="organization" inverseEntity="FFEmployee" syncable="YES"/>
     </entity>
     <elements>
-        <element name="FFEmployee" positionX="-155" positionY="-36" width="128" height="135"/>
+        <element name="FFEmployee" positionX="-155" positionY="-36" width="128" height="150"/>
         <element name="FFOrganization" positionX="63" positionY="-27" width="128" height="73"/>
     </elements>
 </model>

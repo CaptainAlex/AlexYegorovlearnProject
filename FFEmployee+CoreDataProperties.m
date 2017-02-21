@@ -2,7 +2,7 @@
 //  FFEmployee+CoreDataProperties.m
 //  TutorialApplication
 //
-//  Created by Александр Егоров on 2/14/17.
+//  Created by Александр Егоров on 2/21/17.
 //  Copyright © 2017 Александр Егоров. All rights reserved.
 //
 
@@ -16,9 +16,10 @@
 
 @dynamic dateOfBirth;
 @dynamic firstName;
+@dynamic isActive;
 @dynamic lastName;
-@dynamic salary;
 @dynamic order;
+@dynamic salary;
 @dynamic organization;
 
 @end

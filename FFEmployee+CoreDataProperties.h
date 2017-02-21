@@ -2,7 +2,7 @@
 //  FFEmployee+CoreDataProperties.h
 //  TutorialApplication
 //
-//  Created by Александр Егоров on 2/14/17.
+//  Created by Александр Егоров on 2/21/17.
 //  Copyright © 2017 Александр Егоров. All rights reserved.
 //
 
@@ -17,9 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, copy) NSDate *dateOfBirth;
 @property (nullable, nonatomic, copy) NSString *firstName;
+@property (nonatomic) BOOL isActive;
 @property (nullable, nonatomic, copy) NSString *lastName;
-@property (nonatomic) int16_t salary;
 @property (nonatomic) int16_t order;
+@property (nonatomic) int32_t salary;
 @property (nullable, nonatomic, retain) FFOrganization *organization;
 
 @end

@@ -43,6 +43,7 @@
     newEmployee.firstName = firstName;
     newEmployee.lastName = lastName;
     newEmployee.salary = ourSalary;
+    newEmployee.isActive = true;
     newEmployee.dateOfBirth = [dateFormatter dateFromString:@"1994-04-01"];
     newEmployee.order = lastOrder.intValue + 1;
 
