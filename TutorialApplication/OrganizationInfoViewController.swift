@@ -21,10 +21,8 @@ import UIKit
         RequestManager.fetchOrganizations { (response) in
         
         DatabaseController.removeAllObjects(ofEntity: "FFOrganization")
-    
-        let organizations = response["organizations"] as? [[String : AnyObject]]
                 
-        OrganizationInfoViewController .create(fromJSON: organizations!)
+        OrganizationInfoViewController.create(fromJSON: response["organizations"] as! [[String : AnyObject]])
 
         self.presentActionSheet()
     }
