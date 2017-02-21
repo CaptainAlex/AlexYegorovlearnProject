@@ -10,9 +10,91 @@ import UIKit
 
 @objc class OrganizationInfoViewController: UIViewController
 {
-    var organization: FFOrganization!
+    var organization : FFOrganization!
     
     static let kEmployeesOrderHasChanged = "EmployeesOrderHasChanged"
+    
+    static let kOrganizationHasChanged = "OrganizationHasChanged"
+    
+    @IBAction func fetchOrganizations()
+    {
+        RequestManager.fetchOrganizations { (response) in
+        
+        DatabaseController.removeAllObjects(ofEntity: "FFOrganization")
+                
+        OrganizationInfoViewController.create(fromJSON: response["organizations"] as! [[String : AnyObject]])
+
+        self.presentActionSheet()
+    }
+}
+    
+    static func create(fromJSON json: [[String : AnyObject]])
+    {
+        var newOrganization : FFOrganization
+        
+        var newEmployee : FFEmployee
+        
+        for jsonObjects in json
+        {
+            let organizationName = jsonObjects["name"] as! String
+            
+            let organizationEmployees = jsonObjects["employees"] as! [[String : AnyObject]]
+            
+            print("org name = \(organizationName)  employess = \(organizationEmployees)")
+            
+            newOrganization = NSEntityDescription.insertNewObject(forEntityName: "FFOrganization", into: DatabaseController.sharedInstance().context) as! FFOrganization
+            
+            newOrganization.name = organizationName
+            
+            for item in organizationEmployees
+            {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                
+                newEmployee = NSEntityDescription.insertNewObject(forEntityName: "FFEmployee", into: DatabaseController.sharedInstance().context) as! FFEmployee
+                
+                newEmployee.firstName = item["first_name"] as? String ?? ""
+                newEmployee.lastName = item["last_name"] as? String ?? ""
+                newEmployee.order = item["order"] as! Int16
+                
+                if item["salary"] != nil && !(item["salary"] is NSNull)
+                {
+                    newEmployee.salary = item["salary"] as! Int32
+                }
+                
+                newEmployee.isActive = item["isActive"] as! Bool
+                newEmployee.dateOfBirth = dateFormatter.date(from:"1986/03/15")
+                newOrganization.addEmployeesObject(newEmployee)
+            }
+            DatabaseController.saveContext()
+        }
+    }
+    
+    func presentActionSheet()
+    {
+        let actionSheetController = UIAlertController(title: "Please select organization", message: "", preferredStyle: .actionSheet)
+        
+        let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        actionSheetController.addAction(cancelActionButton)
+        
+        let organizationsFromDB = DatabaseController.requestResults(for: nil, sortDescriptors: nil, entity: "FFOrganization")
+        
+        for organizations in 0...Int((organizationsFromDB!.count)) - 1
+        {
+            let organizationsList = UIAlertAction(title: (organizationsFromDB?[organizations] as! FFOrganization).name, style: .default){ action -> Void in
+                
+                let pickedOrganization = organizationsFromDB?[organizations] as! FFOrganization
+                
+                NotificationCenter.default.post(name: Notification.Name(rawValue: OrganizationInfoViewController.kOrganizationHasChanged), object: self, userInfo: ["organization" : pickedOrganization])
+                
+                weak var weakSelf = self
+                weakSelf!.navigationController!.popViewController(animated: true)
+            }
+            actionSheetController.addAction(organizationsList)
+        }
+        self.present(actionSheetController, animated: true, completion: nil)
+    }
     
     @IBAction func onRandomizeOrder()
     {

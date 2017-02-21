@@ -30,6 +30,8 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(employeesOrderWasRandomized) name:[OrganizationInfoViewController kEmployeesOrderHasChanged] object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(organizationWasChanged:) name:[OrganizationInfoViewController kOrganizationHasChanged] object:nil];
+
     self.organization = [DatabaseController requestResultsForPredicate:nil sortDescriptors:nil entity:@"FFOrganization"].firstObject;
     
     if (!self.organization)
@@ -44,6 +46,7 @@
         newEmployee.firstName = @"Eva";
         newEmployee.lastName = @"Green";
         newEmployee.salary = 15600;
+        newEmployee.isActive = true;
         newEmployee.dateOfBirth = [dateFormatter dateFromString:@"1986-04-13"];
         newEmployee.order = 1;
         
@@ -66,6 +69,14 @@
 - (void)employeesOrderWasRandomized
 {
     NSLog(@"method getNotificationAfterRandomizeOrder is used");
+    [self.tableView reloadData];
+}
+
+- (void)organizationWasChanged:(NSNotification *)notification
+{
+    NSLog(@"method organizationWasChanged is used");
+    
+    self.organization = notification.userInfo[@"organization"];
     [self.tableView reloadData];
 }
 
@@ -159,6 +170,7 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:[OrganizationInfoViewController kEmployeesOrderHasChanged] object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:[OrganizationInfoViewController kOrganizationHasChanged] object:nil];
 }
 
 @end

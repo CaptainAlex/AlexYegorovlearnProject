@@ -36,15 +36,25 @@
                                     <action selector="onRandomizeOrder" destination="XdH-8A-9fa" eventType="touchUpInside" id="1iP-xO-hWr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXQ-gu-oaf">
+                                <rect key="frame" x="112" y="364" width="151" height="30"/>
+                                <state key="normal" title="Fetch organizations"/>
+                                <connections>
+                                    <action selector="fetchOrganizations" destination="XdH-8A-9fa" eventType="touchUpInside" id="75v-zi-QLU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4Yl-dU-LRr" firstAttribute="leading" secondItem="EjI-o9-4dl" secondAttribute="leading" constant="112" id="0vz-XS-e41"/>
+                            <constraint firstItem="aXQ-gu-oaf" firstAttribute="leading" secondItem="EjI-o9-4dl" secondAttribute="leading" constant="112" id="HBX-pn-Ccg"/>
                             <constraint firstAttribute="trailing" secondItem="uSW-8S-LST" secondAttribute="trailing" constant="112" id="NpV-jh-jRZ"/>
+                            <constraint firstItem="aXQ-gu-oaf" firstAttribute="top" secondItem="uSW-8S-LST" secondAttribute="bottom" constant="16" id="RrU-I4-X5C"/>
                             <constraint firstAttribute="trailing" secondItem="4Yl-dU-LRr" secondAttribute="trailing" constant="112" id="Ton-LZ-frW"/>
                             <constraint firstItem="uSW-8S-LST" firstAttribute="leading" secondItem="EjI-o9-4dl" secondAttribute="leading" constant="112" id="dYC-Ac-kWZ"/>
                             <constraint firstItem="4Yl-dU-LRr" firstAttribute="top" secondItem="mjR-if-42W" secondAttribute="bottom" constant="208" id="e2K-7Y-GEK"/>
                             <constraint firstItem="uSW-8S-LST" firstAttribute="top" secondItem="4Yl-dU-LRr" secondAttribute="bottom" constant="16" id="ute-LG-2mq"/>
+                            <constraint firstAttribute="trailing" secondItem="aXQ-gu-oaf" secondAttribute="trailing" constant="112" id="utl-XQ-sHF"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -192,7 +202,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pq6-KJ-TXb" id="5CY-UM-ldG">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>

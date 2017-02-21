@@ -46,6 +46,7 @@
     newEmployee.firstName = firstName;
     newEmployee.lastName = lastName;
     newEmployee.salary = salaryInt;
+    newEmployee.isActive = true;
     newEmployee.dateOfBirth = self.dateOfBirth;
     
     [self.delegate onEmployeeCreated:newEmployee];

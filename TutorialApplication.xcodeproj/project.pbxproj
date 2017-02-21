@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E666873A1E4DF91800EB7415 /* OrganizationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66687391E4DF91800EB7415 /* OrganizationInfoViewController.swift */; };
-		E682C6EE1E4B1D7B006F3542 /* libHSDatePickerViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E682C6ED1E4B1D7B006F3542 /* libHSDatePickerViewController.a */; };
-		E682C6F01E4B1E30006F3542 /* libPods-TutorialApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E682C6EF1E4B1E30006F3542 /* libPods-TutorialApplication.a */; };
 		E68540521E546B3B0060D205 /* DatabaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = E68540511E546B3B0060D205 /* DatabaseController.m */; };
+		E6AA3FF11E5743B6005299A2 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA3FF01E5743B6005299A2 /* RequestManager.swift */; };
 		E6D8C3F41E3B954F00C321EF /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A48D4B1E35E8DC006AFC10 /* DetailViewController.m */; };
 		E6D8C3F51E3B955300C321EF /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B598861E3241C4008C103A /* MainViewController.m */; };
 		E6D8C3F81E3B955F00C321EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DBE46C1E2D1B4E000D639A /* AppDelegate.m */; };
@@ -20,6 +19,9 @@
 		E6D8C4071E3B9BD200C321EF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D8C4061E3B9BD200C321EF /* CoreData.framework */; };
 		E6D8C4091E3BA11B00C321EF /* Organization.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DBE4831E2D1B85000D639A /* Organization.m */; };
 		E6D8C40A1E3BA12000C321EF /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DBE4801E2D1B71000D639A /* Employee.m */; };
+		E6D965DC1E5AD54F00C92A87 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D965DB1E5AD54F00C92A87 /* Alamofire.framework */; };
+		E6D965DE1E5AD57300C92A87 /* HSDatePickerViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D965DD1E5AD57300C92A87 /* HSDatePickerViewController.framework */; };
+		E6D965E01E5AD91500C92A87 /* Pods_TutorialApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D965DF1E5AD91500C92A87 /* Pods_TutorialApplication.framework */; };
 		E6DBE4731E2D1B4E000D639A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6DBE4711E2D1B4E000D639A /* Main.storyboard */; };
 		E6DBE4751E2D1B4E000D639A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6DBE4741E2D1B4E000D639A /* Assets.xcassets */; };
 		E6DBE4781E2D1B4E000D639A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6DBE4761E2D1B4E000D639A /* LaunchScreen.storyboard */; };
@@ -32,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		11CEBB77B402CCC83724382D /* Pods-TutorialApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorialApplication.release.xcconfig"; path = "Pods/Target Support Files/Pods-TutorialApplication/Pods-TutorialApplication.release.xcconfig"; sourceTree = "<group>"; };
+		5E4D6BF160C2D92E6E6764D7 /* Pods_TutorialApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TutorialApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DAEB690B5F203228DE58FB /* Pods-TutorialApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorialApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TutorialApplication/Pods-TutorialApplication.debug.xcconfig"; sourceTree = "<group>"; };
 		E66687381E4DF91800EB7415 /* TutorialApplication-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TutorialApplication-Bridging-Header.h"; sourceTree = "<group>"; };
 		E66687391E4DF91800EB7415 /* OrganizationInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationInfoViewController.swift; sourceTree = "<group>"; };
@@ -43,10 +46,14 @@
 		E69A2C211E38BDE800D1CC47 /* CreateEmployeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEmployeeViewController.m; sourceTree = "<group>"; };
 		E6A48D4A1E35E8DC006AFC10 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		E6A48D4B1E35E8DC006AFC10 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		E6AA3FF01E5743B6005299A2 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		E6B598851E3241C4008C103A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		E6B598861E3241C4008C103A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		E6D8C3E21E3B77B000C321EF /* TutorialApplication.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TutorialApplication.xcdatamodel; sourceTree = "<group>"; };
 		E6D8C4061E3B9BD200C321EF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E6D965DB1E5AD54F00C92A87 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		E6D965DD1E5AD57300C92A87 /* HSDatePickerViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HSDatePickerViewController.framework; path = "Pods/../build/Debug-iphoneos/HSDatePickerViewController/HSDatePickerViewController.framework"; sourceTree = "<group>"; };
+		E6D965DF1E5AD91500C92A87 /* Pods_TutorialApplication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_TutorialApplication.framework; path = "../Library/Developer/Xcode/DerivedData/TutorialApplication-attitflntzgaohfvdfgvyxmbrxhn/Build/Products/Debug-iphonesimulator/Pods_TutorialApplication.framework"; sourceTree = "<group>"; };
 		E6DBE4651E2D1B4E000D639A /* TutorialApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TutorialApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6DBE4691E2D1B4E000D639A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6DBE46B1E2D1B4E000D639A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -69,7 +76,6 @@
 		E6F1220D1E409C7400090373 /* FFOrganization+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FFOrganization+CoreDataClass.m"; sourceTree = "<group>"; };
 		E6F1220E1E409C7400090373 /* FFOrganization+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FFOrganization+CoreDataProperties.h"; sourceTree = "<group>"; };
 		E6F1220F1E409C7400090373 /* FFOrganization+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FFOrganization+CoreDataProperties.m"; sourceTree = "<group>"; };
-		EAD0278144955ECE5A1094CB /* libPods-TutorialApplication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TutorialApplication.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +83,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E682C6F01E4B1E30006F3542 /* libPods-TutorialApplication.a in Frameworks */,
-				E682C6EE1E4B1D7B006F3542 /* libHSDatePickerViewController.a in Frameworks */,
+				E6D965E01E5AD91500C92A87 /* Pods_TutorialApplication.framework in Frameworks */,
+				E6D965DE1E5AD57300C92A87 /* HSDatePickerViewController.framework in Frameworks */,
+				E6D965DC1E5AD54F00C92A87 /* Alamofire.framework in Frameworks */,
 				E6D8C4071E3B9BD200C321EF /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,10 +105,13 @@
 		E6D8C4051E3B9BD200C321EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E6D965DF1E5AD91500C92A87 /* Pods_TutorialApplication.framework */,
+				E6D965DD1E5AD57300C92A87 /* HSDatePickerViewController.framework */,
+				E6D965DB1E5AD54F00C92A87 /* Alamofire.framework */,
 				E682C6EF1E4B1E30006F3542 /* libPods-TutorialApplication.a */,
 				E682C6ED1E4B1D7B006F3542 /* libHSDatePickerViewController.a */,
 				E6D8C4061E3B9BD200C321EF /* CoreData.framework */,
-				EAD0278144955ECE5A1094CB /* libPods-TutorialApplication.a */,
+				5E4D6BF160C2D92E6E6764D7 /* Pods_TutorialApplication.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -137,6 +147,7 @@
 			children = (
 				E68540501E546B3B0060D205 /* DatabaseController.h */,
 				E68540511E546B3B0060D205 /* DatabaseController.m */,
+				E6AA3FF01E5743B6005299A2 /* RequestManager.swift */,
 				E66687391E4DF91800EB7415 /* OrganizationInfoViewController.swift */,
 				E66687381E4DF91800EB7415 /* TutorialApplication-Bridging-Header.h */,
 				E69A2C201E38BDE800D1CC47 /* CreateEmployeeViewController.h */,
@@ -297,6 +308,7 @@
 				E6F1217A1E407F0D00090373 /* TutorialApplication.xcdatamodeld in Sources */,
 				E6F122131E409C7400090373 /* FFOrganization+CoreDataProperties.m in Sources */,
 				E6D8C40A1E3BA12000C321EF /* Employee.m in Sources */,
+				E6AA3FF11E5743B6005299A2 /* RequestManager.swift in Sources */,
 				E6D8C4091E3BA11B00C321EF /* Organization.m in Sources */,
 				E6F122101E409C7400090373 /* FFEmployee+CoreDataClass.m in Sources */,
 				E6D8C4031E3B9ACB00C321EF /* CreateEmployeeViewController.m in Sources */,
@@ -431,6 +443,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/HSDatePickerViewController",
+				);
 				INFOPLIST_FILE = TutorialApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FF.TutorialApplication;
@@ -447,6 +464,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/HSDatePickerViewController",
+				);
 				INFOPLIST_FILE = TutorialApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FF.TutorialApplication;
