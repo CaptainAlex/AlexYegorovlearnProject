@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C42630B2C5CE9EBC52F895E367A87286"
-               BuildableName = "libHSDatePickerViewController.a"
+               BlueprintIdentifier = "CB37792879AFEB40A9BB515BF6949CD5"
+               BuildableName = "HSDatePickerViewController.framework"
                BlueprintName = "HSDatePickerViewController"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C42630B2C5CE9EBC52F895E367A87286"
-            BuildableName = "libHSDatePickerViewController.a"
+            BlueprintIdentifier = "CB37792879AFEB40A9BB515BF6949CD5"
+            BuildableName = "HSDatePickerViewController.framework"
             BlueprintName = "HSDatePickerViewController"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
