@@ -11,19 +11,15 @@ import Alamofire
 
 class RequestManager: NSObject
 {
-    static func fetchOrganizations(closure:@escaping ([String : AnyObject])->())
+    static func fetchOrganizations(completionHandler: @escaping ([String : AnyObject]) -> ())
     {
         Alamofire.request("http://gitlab.faifly.com/ios-general/ios-tutorial/uploads/ffffec34fa4a727922bb1e09cc24b21d/tutorial.json").responseJSON
             { response in
             
-            if let JSON = response.result.value
-            {
-                print("JSON: \(JSON)")
-            }
-            if let jsonDictionary = response.result.value as? [String : AnyObject]
-            {
-                closure(jsonDictionary)
-            }
+                if let JSON = response.result.value as? [String : AnyObject]
+                {
+                    completionHandler(JSON)
+                }
         }
     }
     

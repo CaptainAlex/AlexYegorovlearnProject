@@ -74,10 +74,9 @@
 
 - (void)organizationWasChanged:(NSNotification *)notification
 {
-    NSLog(@"%@",[notification.userInfo valueForKey:@"organization"]);
     NSLog(@"method organizationWasChanged is used");
     
-    self.organization = [notification.userInfo valueForKey:@"organization"];
+    self.organization = notification.userInfo[@"organization"];
     [self.tableView reloadData];
 }
 
