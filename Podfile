@@ -6,6 +6,7 @@ target 'TutorialApplication' do
    use_frameworks!
 pod 'HSDatePickerViewController', '~> 1.0'
 pod 'Alamofire', '~> 4.3'
+pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
   # Pods for TutorialApplication
 
 end
