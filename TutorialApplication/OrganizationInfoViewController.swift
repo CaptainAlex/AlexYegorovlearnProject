@@ -168,9 +168,12 @@ import SVProgressHUD
                 {
                     count += 1
                 }
+                if count != 10000
+                {
                 i += 1
+                }
             }
-
+            print(count)
             SVProgressHUD.dismiss()
             
             let alertController = UIAlertController(title: "Prime Number", message: "10000th prime number is \(i)", preferredStyle: .alert)
