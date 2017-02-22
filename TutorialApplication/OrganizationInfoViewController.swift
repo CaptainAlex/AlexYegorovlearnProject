@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 @objc class OrganizationInfoViewController: UIViewController
 {
@@ -132,5 +133,55 @@ import UIKit
         alertController.addAction(defaultAction)
         
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func onCalculatePrimeNumber()
+    {
+        func isPrime(number:Int) -> Bool
+        {
+            if number == 1
+            {
+                return false
+            }
+            
+            for i in 2 ..< number
+            {
+                if number % i == 0
+                {
+                    return false
+                }
+            }
+            return true
+        }
+        
+        let globalQueue = DispatchQueue.global()
+        globalQueue.async
+        {
+            SVProgressHUD.show()
+            
+            var count = 0
+            var i = 1
+            
+            while count < 10000
+            {
+                if isPrime(number: i)
+                {
+                    count += 1
+                }
+                if count != 10000
+                {
+                i += 1
+                }
+            }
+            print(count)
+            SVProgressHUD.dismiss()
+            
+            let alertController = UIAlertController(title: "Prime Number", message: "10000th prime number is \(i)", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 }

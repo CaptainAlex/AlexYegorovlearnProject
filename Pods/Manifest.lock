@@ -1,15 +1,27 @@
 PODS:
   - Alamofire (4.3.0)
   - HSDatePickerViewController (1.0.4)
+  - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.3)
   - HSDatePickerViewController (~> 1.0)
+  - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
+
+EXTERNAL SOURCES:
+  SVProgressHUD:
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+
+CHECKOUT OPTIONS:
+  SVProgressHUD:
+    :commit: 803bc1e473e2861f75abf06174d9c937de7a0fe0
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   HSDatePickerViewController: 5a72b71f8c3b10e76f2c28a898f8572b551432a6
+  SVProgressHUD: d65371a8e4482380deddb9fe60e14e59ddb30eb3
 
-PODFILE CHECKSUM: 5cc0bec24ac23edca255450c49e939ea1688e47b
+PODFILE CHECKSUM: aed78163e44cc91141b011d4ba3b30bbf5148681
 
 COCOAPODS: 1.1.1
